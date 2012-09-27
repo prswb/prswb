@@ -1,1 +1,2 @@
 *.pyc
+/uxperiment/uxperiment/settings/local.py
