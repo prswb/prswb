@@ -1,5 +1,6 @@
 # Django settings for uxperiment project.
 import os.path
+ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '../'))
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
