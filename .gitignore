@@ -1,2 +1,3 @@
 *.pyc
 /uxperiment/settings/local.py
+/uxperiment/markdown/

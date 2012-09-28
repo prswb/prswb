@@ -15,6 +15,9 @@ urlpatterns = patterns('',
     # Uncomment the next line to enable the admin:
     # url(r'^admin/', include(admin.site.urls)),
     url(r'^contact$', 'pages.views.contact', name='contact'),
-    url(r'^contact/merci', 'pages.views.confirm_contact', 
+    url(r'^contact/merci', 'pages.views.confirm_contact',
         name='confirm_contact'),
+
+    url(r'^(?P<slug>[-/\w\d]+)/$', 'pages.views.markdown_page',
+        name='markdown_page'),
 )

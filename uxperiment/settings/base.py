@@ -150,3 +150,5 @@ LOGGING = {
         },
     }
 }
+
+MARKDOWN_DIR = os.path.join(ROOT_DIR, 'markdown')
