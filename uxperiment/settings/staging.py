@@ -1,4 +1,4 @@
-from settings.base import *
+from uxperiment.settings.base import *
 
 DATABASES = {
     'default': {
