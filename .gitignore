@@ -1,3 +1,4 @@
 *.pyc
+*.sass-cache
 /uxperiment/settings/local.py
 /uxperiment/markdown/
