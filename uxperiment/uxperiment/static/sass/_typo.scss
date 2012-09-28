@@ -1,0 +1,18 @@
+html {
+	font-size: 100%;
+}
+body {
+	font-family: $default-font-stack;
+	font-size: 0.8em/1.6em;
+	color: $body-color;
+}
+p {
+
+}
+h1 {
+
+}
+a {
+	color: $links;
+	&:hover { color: $links-hover;}
+}

@@ -1,0 +1,36 @@
+/*Floats*/
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
+
+/*Clearing floats*/
+.clear {
+  clear: both;
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+.clearfix:before,
+.clearfix:after {
+  content: "";
+  display: table;
+}
+.clearfix:after { clear: both; }
+.clearfix { *zoom:1 }
+
+/*Nav*/
+nav {
+
+}
+
+/*header*/
+.header-block {
+
+}
+
+/*footer*/
