@@ -1,10 +1,12 @@
 # Django settings for uxperiment project.
+import os.path
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
-    # ('Your Name', 'your_email@example.com'),
+    ('Lionel Chanson', 'lionel@soreia.com'),
+    ('Mathieu Tricoire', 'mathieu.tricoire@gmail.com'),
 )
 
 MANAGERS = ADMINS
