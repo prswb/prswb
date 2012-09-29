@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+# coding: utf-8
 import os.path
 import codecs
 import markdown
@@ -21,7 +21,7 @@ def contact(request):
         form = ContactForm(request.POST)
         if form.is_valid():
             send_message(form.cleaned_data)
-            return HttpResponseRedirect('/contact/merci')
+            return HttpResponseRedirect('confirm_contact')
     else:
         form = ContactForm()
     return render(request, 'pages/contact.html', {'form': form})
