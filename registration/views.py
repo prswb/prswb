@@ -3,12 +3,14 @@ from registration.forms import UserCreationForm
 from django.views.decorators.csrf import csrf_protect
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
+from django.core.urlresolvers import reverse
 
 def signin(request):
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
         if form.is_valid():
-            return HttpResponseRedirect('confirm_signin')
+            form.save()
+            return HttpResponseRedirect(reverse('confirm_signin'))
     else:
         form = UserCreationForm()
 
