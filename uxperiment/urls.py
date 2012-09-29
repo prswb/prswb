@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from django.conf.urls import patterns, include, url
 
 # Uncomment the next two lines to enable the admin:
@@ -19,6 +20,9 @@ urlpatterns = patterns('',
     url(r'^contact/merci', 'pages.views.confirm_contact',
         name='confirm_contact'),
 
-    url(r'^(?P<slug>[-/\w\d]+)/$', 'pages.views.markdown_page',
+    #url(r'^proposer-un-site', 'websites.views.propose',
+    #    name='propose_website'),
+
+    url(r'^pages/(?P<slug>[-\w\d]+)/$', 'pages.views.markdown_page',
         name='markdown_page'),
 )
