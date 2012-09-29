@@ -20,12 +20,12 @@ urlpatterns = patterns('',
     url(r'^contact', 'pages.views.contact', name='contact'),
     url(r'^contact/merci', 'pages.views.confirm_contact',
         name='confirm_contact'),
-
     #url(r'^proposer-un-site', 'websites.views.propose',
     #    name='propose_website'),
 
     url(r'^pages/(?P<slug>[-\w\d]+)/$', 'pages.views.markdown_page',
         name='markdown_page'),
+    url(r'^compte/', include('django.contrib.auth.urls')),
 )
 
 urlpatterns += staticfiles_urlpatterns()
