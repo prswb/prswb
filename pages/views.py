@@ -9,6 +9,9 @@ from django.core.mail import send_mass_mail
 from pages.forms import ContactForm
 from django.conf import settings
 
+def dashboard(request):
+    return render(request, 'dashboard.html')
+
 @csrf_protect
 def contact(request):
     """ Contact form
