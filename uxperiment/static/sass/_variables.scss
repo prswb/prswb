@@ -9,8 +9,3 @@ $links-hover : #007; //Couleur au survol des liens
 $body-color: #ccc; //couleur du texte
 
 // === cols ===
-$column-width: 60px;
-$column-gutter-width: 10px;
-$column-outer-width: $column-width + $column-gutter-width * 2;
-$columns: 12;
-$container-width: $columns * $column-outer-width;

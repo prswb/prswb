@@ -1,68 +1,73 @@
-/*
-Syntax error: Undefined mixin 'columns'.
-        on line 42 of sass/_layout.scss, in `columns'
-        from line 42 of sass/_layout.scss
-        from line 4 of sass/styles.scss
+html {
+  font-size: 100%; }
 
-Backtrace:
-sass/_layout.scss:42:in `columns'
-sass/_layout.scss:42
-sass/styles.scss:4
-C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.1.18/lib/sass/tree/visitors/perform.rb:170:in `visit_mixin'
-C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.1.18/lib/sass/tree/visitors/base.rb:37:in `visit'
-C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.1.18/lib/sass/tree/visitors/perform.rb:18:in `visit'
-C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.1.18/lib/sass/tree/visitors/base.rb:53:in `block in visit_children'
-C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.1.18/lib/sass/tree/visitors/base.rb:53:in `map'
-C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.1.18/lib/sass/tree/visitors/base.rb:53:in `visit_children'
-C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.1.18/lib/sass/tree/visitors/perform.rb:27:in `block in visit_children'
-C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.1.18/lib/sass/tree/visitors/perform.rb:39:in `with_environment'
-C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.1.18/lib/sass/tree/visitors/perform.rb:26:in `visit_children'
-C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.1.18/lib/sass/tree/visitors/base.rb:37:in `block in visit'
-C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.1.18/lib/sass/tree/visitors/perform.rb:238:in `visit_rule'
-C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.1.18/lib/sass/tree/visitors/base.rb:37:in `visit'
-C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.1.18/lib/sass/tree/visitors/perform.rb:18:in `visit'
-C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.1.18/lib/sass/tree/visitors/perform.rb:109:in `block (3 levels) in visit_for'
-C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.1.18/lib/sass/tree/visitors/perform.rb:109:in `map'
-C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.1.18/lib/sass/tree/visitors/perform.rb:109:in `block (2 levels) in visit_for'
-C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.1.18/lib/sass/tree/visitors/perform.rb:106:in `each'
-C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.1.18/lib/sass/tree/visitors/perform.rb:106:in `map'
-C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.1.18/lib/sass/tree/visitors/perform.rb:106:in `block in visit_for'
-C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.1.18/lib/sass/tree/visitors/perform.rb:39:in `with_environment'
-C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.1.18/lib/sass/tree/visitors/perform.rb:105:in `visit_for'
-C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.1.18/lib/sass/tree/visitors/base.rb:37:in `visit'
-C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.1.18/lib/sass/tree/visitors/perform.rb:18:in `visit'
-C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.1.18/lib/sass/tree/visitors/perform.rb:146:in `block in visit_import'
-C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.1.18/lib/sass/tree/visitors/perform.rb:146:in `map'
-C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.1.18/lib/sass/tree/visitors/perform.rb:146:in `visit_import'
-C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.1.18/lib/sass/tree/visitors/base.rb:37:in `visit'
-C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.1.18/lib/sass/tree/visitors/perform.rb:18:in `visit'
-C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.1.18/lib/sass/tree/visitors/base.rb:53:in `block in visit_children'
-C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.1.18/lib/sass/tree/visitors/base.rb:53:in `map'
-C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.1.18/lib/sass/tree/visitors/base.rb:53:in `visit_children'
-C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.1.18/lib/sass/tree/visitors/perform.rb:27:in `block in visit_children'
-C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.1.18/lib/sass/tree/visitors/perform.rb:39:in `with_environment'
-C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.1.18/lib/sass/tree/visitors/perform.rb:26:in `visit_children'
-C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.1.18/lib/sass/tree/visitors/base.rb:37:in `block in visit'
-C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.1.18/lib/sass/tree/visitors/perform.rb:47:in `visit_root'
-C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.1.18/lib/sass/tree/visitors/base.rb:37:in `visit'
-C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.1.18/lib/sass/tree/visitors/perform.rb:18:in `visit'
-C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.1.18/lib/sass/tree/visitors/perform.rb:7:in `visit'
-C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.1.18/lib/sass/tree/root_node.rb:20:in `render'
-C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.1.18/lib/sass/engine.rb:299:in `_render'
-C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.1.18/lib/sass/engine.rb:246:in `render'
-C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.1.18/lib/sass/plugin/compiler.rb:340:in `update_stylesheet'
-C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.1.18/lib/sass/plugin/compiler.rb:202:in `block in update_stylesheets'
-C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.1.18/lib/sass/plugin/compiler.rb:200:in `each'
-C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.1.18/lib/sass/plugin/compiler.rb:200:in `update_stylesheets'
-C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.1.18/lib/sass/plugin/compiler.rb:298:in `block in watch'
-C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.1.18/vendor/listen/lib/listen/multi_listener.rb:86:in `call'
-C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.1.18/vendor/listen/lib/listen/multi_listener.rb:86:in `on_change'
-C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.1.18/vendor/listen/lib/listen/multi_listener.rb:95:in `block in initialize_adapter'
-C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.1.18/vendor/listen/lib/listen/adapters/polling.rb:55:in `call'
-C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.1.18/vendor/listen/lib/listen/adapters/polling.rb:55:in `poll'
-C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.1.18/vendor/listen/lib/listen/adapters/polling.rb:31:in `block in start'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Syntax error: Undefined mixin 'columns'.\A         on line 42 of sass/_layout.scss, in `columns'\A         from line 42 of sass/_layout.scss\A         from line 4 of sass/styles.scss"; }
+body {
+  font-family: Arial, sans-serif;
+  font-size: 0.8em/1.6em;
+  color: #cccccc; }
+
+a {
+  color: #0088ff; }
+  a:hover {
+    color: #000077; }
+
+/* Choose a grid width, the number of columns and the margin between columns. The result of the following equation has to be an integer, not a fraction: (width - (columns - 1) * col_margin) / columns = N */
+/* total with of page */
+/* number of columns */
+/* margin between columns */
+/* math magic */
+/* create row div */
+/* create a column div */
+/* make an element span n columns */
+/* the last column in a row needs this */
+/* prepend n blank columns */
+/* append n blank columns */
+body {
+  width: 100%; }
+
+.container {
+  margin: 0 auto;
+  width: 960px; }
+
+header {
+  background: white url() 0 0 no-repeat; }
+
+footer {
+  background: yellow url() 0 0 no-repeat; }
+
+/*Nav*/
+/*header*/
+/*footer*/
+/*Floats*/
+.fl {
+  float: left; }
+
+.fr {
+  float: right; }
+
+/*Clearing floats*/
+.clear {
+  clear: both;
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+  height: 0; }
+
+.clearfix:before,
+.clearfix:after {
+  content: "";
+  display: table; }
+
+.clearfix:after {
+  clear: both; }
+
+.clearfix {
+  *zoom: 1; }
+
+/*Nav*/
+nav {
+  color: #f00; }
+
+/*header*/
+/*footer*/

@@ -4,7 +4,7 @@ body {
 
 .container {
 	margin: 0 auto;
-	width: $container-width;
+	width: $width;
 }
 header {
 	background: #FFF url() 0 0 no-repeat;
@@ -30,15 +30,3 @@ nav {
 /*footer*/
 
 
-.column {
-	float: left;
-	margin {
-		left: $column-gutter-width;
-		right: $column-gutter-width;
-	}
-}
-@for $i from 1 through $columns {
-	.span-#{$i} {
-		@include columns($i);
-	}
-}
