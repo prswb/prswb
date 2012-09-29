@@ -9,6 +9,7 @@
 <form method="post" action="{% url 'signin' %}">
     {% csrf_token %}
     {{ form.as_p }}
+    <input type="submit" value="inscription" />
 </form>
 
 {% endblock %}
