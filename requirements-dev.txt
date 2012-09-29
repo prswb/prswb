@@ -1,0 +1,8 @@
+Django==1.4.1
+Markdown==2.2.0
+wsgiref==0.1.2
+#heroku requirements to not add
+#dj-database-url==0.2.1
+#gunicorn==0.14.6
+#psycopg2==2.4.5
+
