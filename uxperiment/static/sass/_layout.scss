@@ -2,7 +2,10 @@ body {
 	width: 100%;
 }
 
-
+.container {
+	margin: 0 auto;
+	width: $container-width;
+}
 header {
 	background: #FFF url() 0 0 no-repeat;
 	.logo {
@@ -26,10 +29,7 @@ nav {
 
 /*footer*/
 
-.container {
-	margin: 0 auto;
-	width: $container-width;
-}
+
 .column {
 	float: left;
 	margin {

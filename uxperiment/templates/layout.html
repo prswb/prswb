@@ -15,30 +15,27 @@
 
     <link rel="stylesheet" href="{{ STATIC_URL }}css/normalize.css">
     <link rel="stylesheet" href="{{ STATIC_URL }}css/styles.css">
-
+   
 </head>
 <body>
     <header class="clearfix">
-        <div class="header-block container">
-            <a href="{% url dashboard %}" id="logo" class="fl">
-               <!--  <img src="{{ STATIC_URL }}img/logo.png" alt="Logo Grenache du Monde" alt="Logo UXperiment"> -->
+        <div class="header-block wrapper">
+            <a href="homepage.html" id="logo" class="fl">
                <img src="http://placekitten.com/200/140" alt="Logo UXperiment">
             </a>
             <a href="" class="btn-subscribe fr">Vasy inscrit toi</a>
             <nav class="fr">
-             <!-- {% block nav-top %} -->
              <ul>
                 <li class="fl"><a href="">Sites proposés</a></li>
                 <li class="fl"><a href="">Proposer un site</a></li>
                 <li class="fl"><a href="">Contact</a></li>
             </ul>
-            <!--  {% endblock %} -->
         </nav>
     </div>
 </header>
 
-<section id="content" class="clearfix container">
-  {% block content %}No content is present{% endblock %}
+<section id="content" class="clearfix wrapper">
+  <!-- {% block content %}No content is present{% endblock %} -->
   <section class="clearfix">
       <h1>Contribuer à l'évolution des sites</h1>
       <a href="" class="fl">
@@ -62,8 +59,7 @@
 </section>
 
 <footer>
-    <div class="footer-block container clearfix">
-       <!--  <nav>{#% menu 'footer' %#}</nav> -->
+    <div class="footer-block wrapper clearfix">
        <nav>
            <ul>
                <li class="fl"><a href="">Mentions légales</a></li>
