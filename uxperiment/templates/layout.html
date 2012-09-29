@@ -15,12 +15,12 @@
 
     <link rel="stylesheet" href="{{ STATIC_URL }}css/normalize.css">
     <link rel="stylesheet" href="{{ STATIC_URL }}css/styles.css">
-   
+
 </head>
 <body>
     <header class="clearfix">
         <div class="header-block wrapper">
-            <a href="{% url_homepage %}" id="logo" class="fl">
+            <a href="{% url dashboard %}" id="logo" class="fl">
                <!--  <img src="{{ STATIC_URL }}img/logo.png" alt="Logo Grenache du Monde" alt="Logo UXperiment"> -->
                <img src="http://placekitten.com/200/140" alt="Logo UXperiment">
             </a>
@@ -38,7 +38,7 @@
 </header>
 
 <section id="content" class="clearfix wrapper">
-  <!-- {% block content %}No content is present{% endblock %} -->
+  {% block content %}No content is present{% endblock %}
   <section class="clearfix">
       <h1>Contribuer à l'évolution des sites</h1>
       <a href="" class="fl">
@@ -63,7 +63,7 @@
 
 <footer>
     <div class="footer-block wrapper clearfix">
-       <!--  <nav>{% menu 'footer' %}</nav> -->
+       <!--  <nav>{#% menu 'footer' %#}</nav> -->
        <nav>
            <ul>
                <li class="fl"><a href="">Mentions légales</a></li>

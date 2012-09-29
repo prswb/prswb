@@ -21,8 +21,11 @@ urlpatterns = patterns('',
     url(r'^contact/merci', 'pages.views.confirm_contact',
         name='confirm_contact'),
 
-    #url(r'^proposer-un-site', 'websites.views.propose',
-    #    name='propose_website'),
+    # Suggest a website
+    url(r'^proposer-un-site/$', 'websites.views.suggest',
+        name='suggest_website'),
+    url(r'^proposer-un-site/merci/$', 'websites.views.confirm_suggest',
+        name='confirm_suggest_website'),
 
     url(r'^pages/(?P<slug>[-\w\d]+)/$', 'pages.views.markdown_page',
         name='markdown_page'),

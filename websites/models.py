@@ -1,0 +1,9 @@
+# -*- coding: utf-8 -*-
+from django.db import models
+
+class Website(models.Model):
+    url         = models.CharField(max_length=255, unique=True)
+    #title       = models.CharFIeld(max_length=255)
+    #description = models.CharFIeld(max_length=255)
+    #image       = models.CharFIeld(max_length=255)
+
