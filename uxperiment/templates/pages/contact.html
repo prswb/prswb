@@ -1,9 +1,17 @@
 {% extends "layout.html" %}
+{% load url from future %}
 {% block content %}
 <h1>Contact</h1>
-<form method="post" action="/contact">
+<form method="post" action="{% url "contact" %}">
     {% csrf_token %}
-    {{ form.as_p }}
+    {{ form.subject.errors }}
+    {{ form.subject }}
+
+    {{ form.sender.errors }}
+    {{ form.sender }}
+
+    {{ form.message.errors }}
+    {{ form.message }}
     <input type="submit" />
 </form>
 {% endblock %}
