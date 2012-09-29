@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+# coding: utf-8
 import os.path
 import codecs
 import markdown
@@ -8,7 +8,6 @@ from django.views.decorators.csrf import csrf_protect
 from django.core.mail import send_mass_mail
 from pages.forms import ContactForm
 from django.conf import settings
-from django.contrib.auth.forms import UserCreationForm
 
 def dashboard(request):
     return render(request, 'dashboard.html')
@@ -43,10 +42,6 @@ def markdown_page(request, slug):
         except:
             pass
     raise Http404
-
-def signin(request):
-    form = UserCreationForm()
-    return render(request, 'pages/signin.html', {'form': form})
 
 def send_message(data):
     to_sender_message = """

@@ -30,8 +30,7 @@ urlpatterns = patterns('',
 
     url(r'^pages/(?P<slug>[-\w\d]+)/$', 'pages.views.markdown_page',
         name='markdown_page'),
-    url(r'^compte/', include('django.contrib.auth.urls')),
-    url(r'^compte/creation/$', 'pages.views.signin', name="signin"),
+    url(r'^compte/', include('registration.urls')),
 )
 
 # local dev
