@@ -19,7 +19,7 @@
 </head>
 <body>
     <header class="clearfix">
-        <div class="header-block wrapper">
+        <div class="header-block container">
             <a href="{% url dashboard %}" id="logo" class="fl">
                <!--  <img src="{{ STATIC_URL }}img/logo.png" alt="Logo Grenache du Monde" alt="Logo UXperiment"> -->
                <img src="http://placekitten.com/200/140" alt="Logo UXperiment">
@@ -37,7 +37,7 @@
     </div>
 </header>
 
-<section id="content" class="clearfix wrapper">
+<section id="content" class="clearfix container">
   {% block content %}No content is present{% endblock %}
   <section class="clearfix">
       <h1>Contribuer à l'évolution des sites</h1>
@@ -62,7 +62,7 @@
 </section>
 
 <footer>
-    <div class="footer-block wrapper clearfix">
+    <div class="footer-block container clearfix">
        <!--  <nav>{#% menu 'footer' %#}</nav> -->
        <nav>
            <ul>

@@ -1,7 +1,7 @@
-.wrapper {
-	width: $container-width;
-	margin: 0 auto;
+body {
+	width: 100%;
 }
+
 
 header {
 	background: #FFF url() 0 0 no-repeat;
@@ -25,3 +25,20 @@ nav {
 }
 
 /*footer*/
+
+.container {
+	margin: 0 auto;
+	width: $container-width;
+}
+.column {
+	float: left;
+	margin {
+		left: $column-gutter-width;
+		right: $column-gutter-width;
+	}
+}
+@for $i from 1 through $columns {
+	.span-#{$i} {
+		@include columns($i);
+	}
+}
