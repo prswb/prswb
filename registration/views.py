@@ -2,6 +2,7 @@
 from registration.forms import UserCreationForm
 from django.views.decorators.csrf import csrf_protect
 from django.shortcuts import render
+from django.http import HttpResponseRedirect
 
 def signin(request):
     if request.method == 'POST':
