@@ -3,7 +3,14 @@ from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
  
 class UserCreationForm(UserCreationForm):
-    email = forms.EmailField(required=True)
+
+    def __init__(self, *args, **kwargs):
+        super(UserCreationForm, self).__init__(*args, **kwargs)
+        self.fields['username'].label = 'Pseudo'
+        self.fields['password1'].label = 'Mot de passe'
+        self.fields['password2'].label = 'Confirmation du mot de passe'
+
+    email = forms.EmailField(required=True, label="Email")
  
     class Meta:
         model = User
