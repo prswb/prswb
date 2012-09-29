@@ -4,5 +4,5 @@ python: 2.7
 env: DJANGO_SETTINGS_MODULE=uxperiment.settings.test
 
 # command to install depencies
-install: pip install -r requirements.txt --use-mirrors
+install: pip install -r requirements-dev.txt --use-mirrors
 script: python manage.py test
