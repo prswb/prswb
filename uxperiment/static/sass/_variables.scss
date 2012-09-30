@@ -1,11 +1,15 @@
 
 //  === FONTS ===
-$default-font-stack: "museo_700regular", Arial, sans-serif; //typo de base
+$default-font-stack: "Open Sans", Arial, sans-serif; //main font
 $special-font-stack: "museo_700regular", Arial, sans-serif; //font-face
+$special-font-stack-light: "museo_300regular", Arial, sans-serif; //font-face
 
 //  === COLORS ===
-$links: #0088ff; //Couleur des liens
-$links-hover : #007; //Couleur au survol des liens
-$body-color: #ccc; //couleur du texte
+$secondary-color: #29abe2; //in this case, blue
+$links: $secondary-color; //links color
+$links-hover : #007; //hover links color
+$body-color: #4d4d4d; //text color
+$title-color: #29abe2; //titles color
+$color-for-bg: #fff; //in this case, white
 
 // === cols ===
