@@ -5,13 +5,13 @@
 <form method="post" action="{% url "contact" %}">
     {% csrf_token %}
     {{ form.subject.errors }}
-    {{ form.subject }}
+    <p>{{ form.subject }}</p>
 
     {{ form.sender.errors }}
-    {{ form.sender }}
+    <p>{{ form.sender }}</p>
 
     {{ form.message.errors }}
-    {{ form.message }}
+    <p>{{ form.message }}</p>
     <input type="submit" />
 </form>
 {% endblock %}
