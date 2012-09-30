@@ -5,6 +5,7 @@ import markdown
 from django.shortcuts import render
 from django.http import HttpResponseRedirect, Http404
 from django.views.decorators.csrf import csrf_protect
+from django.core.urlresolvers import reverse
 from pages.forms import ContactForm
 from django.conf import settings
 from uxperiment.utils import send_message
@@ -21,7 +22,7 @@ def contact(request):
         form = ContactForm(request.POST)
         if form.is_valid():
             send_message('contact', form.cleaned_data)
-            return HttpResponseRedirect('confirm_contact')
+            return HttpResponseRedirect(reverse('confirm_contact'))
     else:
         form = ContactForm()
     return render(request, 'pages/contact.html', {'form': form})
