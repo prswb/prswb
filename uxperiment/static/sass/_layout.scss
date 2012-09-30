@@ -4,9 +4,8 @@
 }
 header {
 	margin: 0 0 20px;
-	background: #FFF url() 0 0 no-repeat;
 	border-top: 3px solid $secondary-color;
-	.header-block{
+	.header-block {
 		position: relative;
 	}
 	nav {
@@ -16,6 +15,14 @@ header {
 
 footer {
 	background: #f2f2f2;
+	.footer-block {
+		padding: 30px 0 20px;
+		border-top: 1px solid #e6e6e6;
+		background: url(../img/bg-footer.png) right 20px no-repeat;
+		nav {
+			margin: 0 40px 0 0;
+		}
+	}
 }
 
 
