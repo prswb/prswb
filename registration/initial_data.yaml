@@ -1,0 +1,16 @@
+model: django.contrib.auth.user
+    pk: 1
+    fields:
+        username: pseudodo
+        first_name: amanda
+        last_name: marti
+        email: amanda@marti.nez
+        password: amanda
+
+    pk: 2
+    fields:
+        username: intetapeur
+        first_name: erick
+        last_name: gard
+        email: newick@gard.in
+        password: erick
