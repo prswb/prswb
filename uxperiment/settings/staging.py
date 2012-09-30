@@ -1,6 +1,6 @@
 from uxperiment.settings.base import *
 import dj_database_url
-from os
+import os
 
 DATABASES = {'default': dj_database_url.config(default='postgres://localhost')}
 
