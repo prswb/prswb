@@ -15,7 +15,7 @@ header {
 }
 
 footer {
-	background: #FF0 url() 0 0 no-repeat;
+	background: #f2f2f2;
 }
 
 
@@ -41,12 +41,15 @@ footer {
 		margin: 0;
 	}
 	img {
-		margin: 0 0 25px
+		margin: 0 0 25px;
 	}
 	h3 {
+		margin: 0;
 		font-family: $special-font-stack;
 		span {
+			display: block;
 			font-family: $special-font-stack-light;
+			color: #999;
 		}
 	}
 }

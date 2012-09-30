@@ -59,7 +59,7 @@ header {
     margin: 40px 0 0; }
 
 footer {
-  background: yellow url() 0 0 no-repeat; }
+  background: #f2f2f2; }
 
 .col3 {
   margin: 0 50px 70px 0;
@@ -81,9 +81,12 @@ footer {
   .col4 img {
     margin: 0 0 25px; }
   .col4 h3 {
+    margin: 0;
     font-family: "museo_700regular", Arial, sans-serif; }
     .col4 h3 span {
-      font-family: "museo_300regular", Arial, sans-serif; }
+      display: block;
+      font-family: "museo_300regular", Arial, sans-serif;
+      color: #999; }
 
 /*Floats*/
 .fl {
@@ -155,4 +158,6 @@ nav a {
   text-align: center; }
 
 .home-with-bg {
-  background: #f2f2f2; }
+  padding: 0 0 75px;
+  background: #f2f2f2;
+  border-top: 1px solid #e6e6e6; }
