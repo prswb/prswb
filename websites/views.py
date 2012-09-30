@@ -3,10 +3,10 @@ from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from django.views.decorators.csrf import csrf_protect
 from django.core.urlresolvers import reverse
-from django.core.mail import send_mass_mail
 from django.conf import settings
 from django.contrib.auth.decorators import login_required
 from websites.forms import SuggestForm
+from uxperiment.utils import send_message
 
 @csrf_protect
 @login_required
