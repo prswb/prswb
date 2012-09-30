@@ -1,6 +1,6 @@
 [
     {
-        "model": "django.contrib.auth.models.User",
+        "model": "auth.user",
         "pk": 1,
         "fields": {
             "username": "pseudodo",
@@ -9,16 +9,5 @@
             "email": "amanda@marti.nez",
             "password": "amanda"
         }
-    },
-    {
-        "model": "django.contrib.auth.models.User",
-        "pk": 2,
-        "fields": {
-            "username": "intetapeur",
-            "first_name": "erick",
-            "last_name": "gard",
-            "email": "newick@gard.in",
-            "password": "erick"
-        }
-    },
+    }
 ]
