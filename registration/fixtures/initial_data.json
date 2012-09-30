@@ -9,5 +9,16 @@
             "email": "amanda@marti.nez",
             "password": "amanda"
         }
+    },
+    {
+        "model": "auth.user",
+        "pk": 2,
+        "fields": {
+            "username": "intetapeur",
+            "first_name": "erick",
+            "last_name": "gard",
+            "email": "newick@gard.in",
+            "password": "erick"
+        }
     }
 ]
