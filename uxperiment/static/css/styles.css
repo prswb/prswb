@@ -17,7 +17,7 @@ html {
 
 body {
   font-family: "Open Sans", Arial, sans-serif;
-  font-size: 0.813em/1.6em;
+  font-size: 0.813em;
   font-weight: 400;
   color: #4d4d4d; }
 
@@ -33,6 +33,9 @@ a {
   color: #29abe2; }
   a:hover {
     color: #000077; }
+
+nav {
+  font-size: 16px; }
 
 /* Choose a grid width, the number of columns and the margin between columns. The result of the following equation has to be an integer, not a fraction: (width - (columns - 1) * col_margin) / columns = N */
 /* total with of page */
@@ -64,7 +67,7 @@ footer {
     border-top: 1px solid #e6e6e6;
     background: url(../img/bg-footer.png) right 20px no-repeat; }
     footer .footer-block nav {
-      margin: 0 40px 0 0; }
+      margin: 10px 40px 0 0; }
 
 .col3 {
   margin: 0 50px 70px 0;
@@ -74,8 +77,9 @@ footer {
     border: 1px solid #e6e6e6; }
   .col3:last-child {
     margin: 0; }
-  .col3 h3 {
-    text-align: center; }
+  .col3 h2 {
+    text-align: center;
+    font-size: 18px; }
 
 .col4 {
   margin: 0 20px 0 0;
@@ -87,10 +91,13 @@ footer {
     margin: 0 0 25px; }
   .col4 h3 {
     margin: 0;
-    font-family: "museo_700regular", Arial, sans-serif; }
+    font-family: "museo_700regular", Arial, sans-serif;
+    font-size: 18px;
+    line-height: 20px; }
     .col4 h3 span {
       display: block;
       font-family: "museo_300regular", Arial, sans-serif;
+      font-size: 16px;
       color: #999; }
 
 /*Floats*/
@@ -153,14 +160,17 @@ nav a {
 .illustration-title {
   margin: 0;
   padding: 70px 0 0;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  font-size: 30px; }
   .illustration-title span {
     display: block;
-    font-weight: 700; }
+    font-weight: 700;
+    font-size: 36px; }
 
 .home-title {
   margin: 70px 0 60px;
-  text-align: center; }
+  text-align: center;
+  font-size: 36px; }
 
 .home-with-bg {
   padding: 0 0 75px;

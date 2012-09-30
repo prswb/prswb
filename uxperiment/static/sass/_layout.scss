@@ -20,7 +20,7 @@ footer {
 		border-top: 1px solid #e6e6e6;
 		background: url(../img/bg-footer.png) right 20px no-repeat;
 		nav {
-			margin: 0 40px 0 0;
+			margin: 10px 40px 0 0;
 		}
 	}
 }
@@ -36,8 +36,9 @@ footer {
 	&:last-child {
 		margin: 0;
 	}
-	h3 {
+	h2 {
 		text-align: center;
+		font-size: 18px;
 	}
 }
 .col4 {
@@ -53,9 +54,12 @@ footer {
 	h3 {
 		margin: 0;
 		font-family: $special-font-stack;
+		font-size: 18px;
+		line-height: 20px;
 		span {
 			display: block;
 			font-family: $special-font-stack-light;
+			font-size: 16px;
 			color: #999;
 		}
 	}
