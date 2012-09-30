@@ -2,5 +2,6 @@
 *.sass-cache
 /uxperiment/settings/local.py
 *.db
-
 /_SOURCES
+.env
+

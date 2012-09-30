@@ -5,9 +5,10 @@ import markdown
 from django.shortcuts import render
 from django.http import HttpResponseRedirect, Http404
 from django.views.decorators.csrf import csrf_protect
-from django.core.mail import send_mass_mail
+from django.core.urlresolvers import reverse
 from pages.forms import ContactForm
 from django.conf import settings
+from uxperiment.utils import send_message
 
 def dashboard(request):
     return render(request, 'dashboard.html')
@@ -20,8 +21,8 @@ def contact(request):
     if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid():
-            send_message(form.cleaned_data)
-            return HttpResponseRedirect('confirm_contact')
+            send_message('contact', form.cleaned_data)
+            return HttpResponseRedirect(reverse('confirm_contact'))
     else:
         form = ContactForm()
     return render(request, 'pages/contact.html', {'form': form})
@@ -42,22 +43,3 @@ def markdown_page(request, slug):
         except:
             pass
     raise Http404
-
-def send_message(data):
-    to_sender_message = """
-Bonjour,
-
-Votre commentaire sur le site www.uxperiment.fr a bien été pris en compte.
-
-Nous vous remercions de votre participation.
-
-A bientôt,
-
-L'équipe UXperiment
-"""
-    to_admin_message = 'Emetteur : %s \n %s' % (data['sender'], data['message'])
-    to_sender = ('Commentaire sur UXperiment', to_sender_message,
-            'no-reply@uxperiment.fr', [data['sender']])
-    to_admin = (data['subject'], to_admin_message, data['sender'],
-        [settings.EMAIL_RECIPIENT])
-    send_mass_mail((to_sender, to_admin))
