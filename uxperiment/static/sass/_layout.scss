@@ -1,15 +1,16 @@
-body {
-	width: 100%;
-}
-
 .container {
 	margin: 0 auto;
 	width: $width;
 }
 header {
+	margin: 0 0 20px;
 	background: #FFF url() 0 0 no-repeat;
-	.logo {
-
+	border-top: 3px solid $secondary-color;
+	.header-block{
+		position: relative;
+	}
+	nav {
+		margin: 40px 0 0;
 	}
 }
 
@@ -17,16 +18,35 @@ footer {
 	background: #FF0 url() 0 0 no-repeat;
 }
 
-/*Nav*/
-nav {
 
+.col3 {
+	margin: 0 50px 70px 0;
+	width: 270px;
+	img {
+		padding: 10px;	
+		border: 1px solid #e6e6e6;	
+	}
+	&:last-child {
+		margin: 0;
+	}
+	h3 {
+		text-align: center;
+	}
 }
-
-/*header*/
-.header-block {
-
+.col4 {
+	margin: 0 20px 0 0;
+	width: 220px;
+	text-align: center;
+	&:last-child {
+		margin: 0;
+	}
+	img {
+		margin: 0 0 25px
+	}
+	h3 {
+		font-family: $special-font-stack;
+		span {
+			font-family: $special-font-stack-light;
+		}
+	}
 }
-
-/*footer*/
-
-
