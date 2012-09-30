@@ -13,16 +13,18 @@ from django.contrib.auth.models import User
 class SimpleTest(TestCase):
     
     def setUp(self):
-        self.registred = User.objects.get(id=1)
         self.Client = Client()
+
+    def tearDown(self):
+        del self.Client
 
     def test_user_creation(self):
         """
         Tests user creation
-        Response is redirected and new user is in database.
+        Response is redirected
         """
         datas = {"username": "test", "email": "plop@plop.com", 
-                "password1": "apassbutnotword", }
+                "password1": "apassbutnotword", "password2": "apassbutnotword"}
         response = self.Client.post("/compte/creation/", datas)
         print(response)
-        self.assertRedirects(response, "/compte/merci/")
+        self.assertRedirects(response, "/compte/creation/merci/")
