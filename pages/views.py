@@ -31,8 +31,14 @@ def confirm_contact(request):
     """ Contact form confirmation """
     return render(request, 'pages/confirm_contact.html')
 
+
 def markdown_page(request, slug):
-    """ Display markdown file for slug if exist """
+    """
+    Retrieves the file in the MARKDOWN_DIR from `slug`.md's filename.
+
+    This markdown file is converted to html and rendered.
+    Otherwise, if the file doesn't exist, the view returns a 404.
+    """
     filename = os.path.join(settings.MARKDOWN_DIR, '%s.md' % slug)
     if os.path.isfile(filename):
         try:
