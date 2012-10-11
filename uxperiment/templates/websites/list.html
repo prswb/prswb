@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h1>Les sites suggérés</h1>
+{% if websites %}
+<ul>
+    {% for website in websites %}
+    <li>
+        {{ website.title }}
+        <a href="#" taget="_blank">{{ website.title }}</a>
+        <img src="/media/{{ website.picture }}" alt="{{ website.title }} ({{ website.url }})" />
+        <p>proposé le {{ website.date }}</p>
+        <a href="{{ website.url }}" taget="_blank">{{ website.url }}</a>
+    </li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>Aucun site pour l'instant</p>
+<p><a href="{% url suggest_website %}">Suggérer un site</a></p>
+{% endif %}
+{% endblock %}
