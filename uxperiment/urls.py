@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from django.conf.urls import patterns, include, url
 from django.conf import settings
+from django.contrib import admin
 
 # views and urls imports
 from pages import views as pages_views
@@ -9,8 +10,15 @@ from registration import urls as registration_urls
 from django import views as django_views
 
 
+admin.autodiscover()
+
 urlpatterns = patterns('',
-    url(r'^$', pages_views.dashboard, name='dashboard'),
+    url(r'^$', pages_views.dashboard, name='homepage'),
+    url(r'^sites-proposes/$', websites_views.list, name='websites_list'),
+
+    url(r'^admin/', include(admin.site.urls)),
+
+    # contact
     url(r'^contact/$', pages_views.contact, name='contact'),
     url(r'^contact/merci/$', pages_views.confirm_contact,
         name='confirm_contact'),
