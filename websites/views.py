@@ -10,6 +10,17 @@ from websites.models import get_url_informations
 from websites.forms import SuggestForm
 from uxperiment.utils import send_message
 
+from models import Website
+
+
+def list(request):
+    websites = Website.objects.all()
+    params = dict(
+        websites=websites
+        )
+    return render(request, 'websites/list.html', params)
+
+
 @csrf_protect
 @login_required
 def suggest(request):
