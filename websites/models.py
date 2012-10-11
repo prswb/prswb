@@ -1,17 +1,60 @@
 # -*- coding: utf-8 -*-
-import re
-import requests
+
 from django.db import models
 from django.forms import URLField
 from bs4 import BeautifulSoup
 
+import requests
+
+import hashlib
+import re
+import os
+
+
+def website_upload_to(instance, filename):
+    return os.path.join("websites", "%s.jpg" % hashlib.sha1(instance.url).hexdigest())
+
+
 class Website(models.Model):
-    url         = models.URLField(max_length=255, unique=True)
-    title       = models.CharField(max_length=255)
-    description = models.CharField(max_length=255)
-    picture     = models.CharField(max_length=255)
 
+    REQUEST_COMMENT = 'comment'
+    REQUEST_IMPROVE = 'improve'
+    REQUEST_DEBUG = 'debug'
 
+    url = models.URLField(
+        max_length=255,
+        unique=True,
+        )
+    title = models.CharField(
+        max_length=255
+        )
+    description = models.CharField(
+        max_length=255,
+        null=True,
+        )
+    picture = models.ImageField(
+        upload_to=website_upload_to,
+        null=True,
+        )
+    request_type = models.CharField(
+        max_length=30,
+        choices=(
+            (REQUEST_COMMENT, u"Commentaire"),
+            (REQUEST_IMPROVE, u"Suggestion d'amélioration"),
+            (REQUEST_DEBUG, u"Problème/bug"),
+            )
+        )
+    date = models.DateTimeField(
+        auto_now_add=True,
+        )
+
+    def __unicode__(self):
+        return unicode(self.title)
+
+    class Meta:
+        ordering = ('-date',)
+
+#----------------------------
 
 def get_url_informations(url):
     """Get informations about a url"""
