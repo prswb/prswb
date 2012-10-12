@@ -2,22 +2,21 @@
 from django.conf.urls import patterns, include, url
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.conf import settings
+from django.contrib import admin
 
-# Uncomment the next two lines to enable the admin:
-# from django.contrib import admin
-# admin.autodiscover()
+from pages import views as pages_views
+from websites import views as websites_views
+
+
+admin.autodiscover()
 
 urlpatterns = patterns('',
-    # Examples:
-    # url(r'^$', 'uxperiment.views.home', name='home'),
-    # url(r'^uxperiment/', include('uxperiment.foo.urls')),
+    url(r'^$', pages_views.dashboard, name='homepage'),
+    url(r'^sites-proposes/$', websites_views.list, name='websites_list'),
 
-    # Uncomment the admin/doc line below to enable admin documentation:
-    # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
+    url(r'^admin/', include(admin.site.urls)),
 
-    # Uncomment the next line to enable the admin:
-    # url(r'^admin/', include(admin.site.urls)),
-    url(r'^$', 'pages.views.dashboard', name='dashboard'),
+    # contact
     url(r'^contact/$', 'pages.views.contact', name='contact'),
     url(r'^contact/merci/$', 'pages.views.confirm_contact',
         name='confirm_contact'),
