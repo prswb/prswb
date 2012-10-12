@@ -27,8 +27,8 @@
     </a>
 
     <div class="btn-subscribe fr">
-      {% if request.user.is_authenticated %}
-        {% trans "Hello," %} {{ request.user.username }}
+      {% if user.is_authenticated %}
+        {% trans "Hello," %} <a href="#to-profile">{{ user.username }}</a>
       {% else %}
         <a href="{% url 'registration_register' %}">{% trans "Register" %}</a> /
         <a href="{% url 'auth_login' %}">{% trans "Log in" %}</a>
