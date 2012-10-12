@@ -8,7 +8,10 @@
     <li>
         {{ website.title }}
         <a href="#" taget="_blank">{{ website.title }}</a>
-        <img src="/media/{{ website.picture }}" alt="{{ website.title }} ({{ website.url }})" />
+        <img src="/media/{{ website.picture }}" \
+            alt="{{ website.title }} ({{ website.url }})"
+            width="240" height="160"
+            />
         <p>proposé le {{ website.date }}</p>
         <a href="{{ website.url }}" taget="_blank">{{ website.url }}</a>
     </li>

@@ -1,10 +1,13 @@
 {% extends "layout.html" %}
 
 {% block content %}
+{% if errors %}
+<p class="error">Veuillez corriger le formulaire ci-dessous</p>
+{% endif %}
 <h1>Proposer un site</h1>
-<form method="post" action="{% url suggest_website %}">
+<form method="post" action="." enctype="multipart/form-data">
     {% csrf_token %}
     {{ form.as_p }}
-    <input type="submit" />
+    <input type="submit" value="Suggérer ce site" />
 </form>
 {% endblock %}
