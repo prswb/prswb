@@ -2,7 +2,7 @@
 import os.path
 ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 
-DEBUG = True
+DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
@@ -165,6 +165,9 @@ PASSWORD_HASHERS = (
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
+
+# Profiles
+LOGIN_REDIRECT_URL = '/compte/profil/'
 
 # Registration settings
 ACCOUNT_ACTIVATION_DAYS = 7
