@@ -189,7 +189,10 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
 # Profiles
+
+LOGIN_URL = '/compte/login/'
 LOGIN_REDIRECT_URL = '/compte/profil/'
+LOGOUT_URL = '/compte/logout/'
 
 # Registration settings
 ACCOUNT_ACTIVATION_DAYS = 7
