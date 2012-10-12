@@ -144,6 +144,10 @@ ul {
   font-weight: 600;
   text-decoration: none; }
 
+.btn-subscribe a {
+  color: #fff;
+}
+
 nav li {
   margin: 0 15px 0 0; }
   nav li:last-child {
