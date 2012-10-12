@@ -29,9 +29,12 @@ urlpatterns = patterns('',
     url(r'^informations-sur-un-site/$', 'websites.views.informations',
         name='informations_website'),
 
+    # pages
     url(r'^pages/(?P<slug>[-\w\d]+)/$', 'pages.views.markdown_page',
         name='markdown_page'),
-    url(r'^compte/', include('registration.urls')),
+
+    # registration, accounts
+    url(r'^compte/', include('registration.backends.default.urls')),
 )
 
 # local dev

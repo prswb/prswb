@@ -1,0 +1,16 @@
+{% load url from future %}
+
+Hey,
+
+Thanks for registering with UXPeriment.
+
+Please click the link below to activate your account:
+http://{{ site }}{% url 'registration_activate' activation_key=activation_key %}
+
+Note: this link will expires in {{ expiration_days }} days.
+
+Thank you,
+
+--
+The UXPeriment Team
+http://{{ site }}
