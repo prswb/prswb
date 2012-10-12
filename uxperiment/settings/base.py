@@ -187,6 +187,7 @@ PASSWORD_HASHERS = (
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
+EMAIL_RECIPIENT = 'admin@uxperiment.com'
 
 # Profiles
 
