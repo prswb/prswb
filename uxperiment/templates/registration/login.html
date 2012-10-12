@@ -4,6 +4,7 @@
 {% block content %}
     <h2>{% trans "Log in" %}</h2>
     <form method="post" action=".">
+        {% csrf_token %}
         {{ form.as_p }}
         <input type="submit" value="{% trans 'Log in' %}" />
         <input type="hidden" name="next" value="{{ next }}" />
