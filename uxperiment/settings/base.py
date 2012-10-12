@@ -118,7 +118,8 @@ TEMPLATE_DIRS = (
     os.path.join(ROOT_DIR, 'templates')
 )
 
-INSTALLED_APPS = (
+# django contrib apps
+DJANGO_APPS = (
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -126,11 +127,22 @@ INSTALLED_APPS = (
 #    'django.contrib.sites',
     'django.contrib.messages',
 #    'django.contrib.staticfiles',
+)
+
+# third party packages
+VENDOR_APPS = (
     'south',
-    'pages',
-    'websites',
     'registration',
 )
+
+# local apps
+LOCAL_APPS = (
+    'generic',
+    'pages',
+    'websites',
+)
+
+INSTALLED_APPS = DJANGO_APPS + VENDOR_APPS + LOCAL_APPS
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
