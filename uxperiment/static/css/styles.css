@@ -35,7 +35,10 @@ a {
     color: #000077; }
 
 nav {
-  font-size: 16px; }
+  font-size: 1em; }
+
+input {
+  font-size: 0.938em; }
 
 /* Choose a grid width, the number of columns and the margin between columns. The result of the following equation has to be an integer, not a fraction: (width - (columns - 1) * col_margin) / columns = N */
 /* total with of page */
@@ -90,6 +93,26 @@ footer {
       font-family: "museo_300regular", Arial, sans-serif;
       font-size: 16px;
       color: #999; }
+
+input, textarea {
+  padding: 4px;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  border: 1px solid #e6e6e6; }
+
+input[type="submit"] {
+  padding: 5px 10px;
+  background: #29abe2;
+  color: #fff;
+  border: none; }
+
+.errorlist {
+  float: right;
+  margin: 0 280px 0 0; }
+  .errorlist li {
+    list-style-type: none;
+    color: #ed1e79; }
 
 /*Floats*/
 .fl {

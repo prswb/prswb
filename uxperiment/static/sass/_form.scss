@@ -1,0 +1,21 @@
+input, textarea {
+	padding: 4px;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
+	border: 1px solid $border;
+}
+input[type="submit"] {
+	padding: 5px 10px;
+	background: $secondary-color;
+	color: #fff;
+	border: none;
+}
+.errorlist {
+	float: right;
+	margin: 0 280px 0 0;
+	li {
+		list-style-type: none;
+		color: $error;
+	}
+}
