@@ -12,3 +12,9 @@ elif UXPERIMENT_ENV == 'production':
     from .production import *
 else:
     from .base import *
+
+# local settings
+try:
+    from .local import *
+except ImportError:
+    pass
