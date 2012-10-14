@@ -1,17 +1,14 @@
 import os
+import dj_database_url
 
 from .base import *
 
 
-DATABASES = {
-    'default': {
-        'ENGINE':   'django.db.backends.postgresql_psycopg2',
-        'USER':     os.environ.get('UXPERIMENT_POSTGRES_USERNAME', 'postgres'),
-        'PASSWORD': os.environ.get('UXPERIMENT_POSTGRES_PASSWORD'),
-        'HOST':     os.environ.get('UXPERIMENT_POSTGRES_HOST', 'localhost'),
-        'PORT':     os.environ.get('UXPERIMENT_POSTGRES_PORT', 5432),
-    }
-}
+INSTALLED_APPS += (
+    'gunicorn',
+)
+
+DATABASES = {'default': dj_database_url.config(default='postgres://localhost')}
 
 EMAIL_RECIPIENT = os.environ.get('EMAIL_RECIPIENT')
 EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
