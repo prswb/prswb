@@ -2,7 +2,7 @@
 import os.path
 ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 
-DEBUG = True
+DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
@@ -96,6 +96,16 @@ MIDDLEWARE_CLASSES = (
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
+TEMPLATE_CONTEXT_PROCESSORS = (
+    'django.contrib.auth.context_processors.auth',
+    'django.core.context_processors.debug',
+    'django.core.context_processors.i18n',
+    'django.core.context_processors.media',
+    'django.core.context_processors.static',
+    'django.core.context_processors.tz',
+    'django.contrib.messages.context_processors.messages',
+)
+
 ROOT_URLCONF = 'uxperiment.urls'
 
 # Python dotted path to the WSGI application used by Django's runserver.
@@ -108,22 +118,31 @@ TEMPLATE_DIRS = (
     os.path.join(ROOT_DIR, 'templates')
 )
 
-INSTALLED_APPS = (
+# django contrib apps
+DJANGO_APPS = (
+    'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
 #    'django.contrib.sites',
     'django.contrib.messages',
 #    'django.contrib.staticfiles',
+)
+
+# third party packages
+VENDOR_APPS = (
     'south',
+    'registration',
+)
+
+# local apps
+LOCAL_APPS = (
+    'generic',
     'pages',
     'websites',
-    'registration',
-    # Uncomment the next line to enable the admin:
-    'django.contrib.admin',
-    # Uncomment the next line to enable admin documentation:
-    # 'django.contrib.admindocs',
 )
+
+INSTALLED_APPS = DJANGO_APPS + VENDOR_APPS + LOCAL_APPS
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
@@ -168,3 +187,13 @@ PASSWORD_HASHERS = (
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
+EMAIL_RECIPIENT = 'admin@uxperiment.com'
+
+# Profiles
+
+LOGIN_URL = '/compte/login/'
+LOGIN_REDIRECT_URL = '/compte/profil/'
+LOGOUT_URL = '/compte/logout/'
+
+# Registration settings
+ACCOUNT_ACTIVATION_DAYS = 7

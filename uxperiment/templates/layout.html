@@ -1,5 +1,6 @@
+{% load i18n %}
+{% load url from future %}
 <!DOCTYPE html>
-
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 <head>
   <meta charset="utf-8">
@@ -21,19 +22,29 @@
 
 </head>
 <body>
-  <header class="clearfix">
-    <div class="header-block container">
-      <a href="/" id="logo" class="fl">
-       <img src="{{ STATIC_URL }}img/logo.png" alt="Logo UXperiment">
-     </a>
-     <a href="" class="btn-subscribe fr">> Inscription / Authentification</a>
-     <nav class="fr">
-       <ul>
-        <li class="fl"><a href="{% url websites_list %}">Sites proposés</a></li>
+<header class="clearfix">
+  <div class="header-block container">
+    <a href="{% url 'homepage' %}" id="logo" class="fl">
+      <img src="{{ STATIC_URL }}img/logo.png" alt="Logo UXperiment">
+    </a>
+
+    <div class="btn-subscribe fr">
+      {% if user.is_authenticated %}
+        {% trans "Hello," %} <a href="#to-profile">{{ user.username }}</a> /
+        <a href="{% url 'auth_logout' %}">{% trans "Log out" %}</a>
+      {% else %}
+        <a href="{% url 'registration_register' %}">{% trans "Register" %}</a> /
+        <a href="{% url 'auth_login' %}">{% trans "Log in" %}</a>
+      {% endif %}
+    </div>
+
+    <nav class="fr">
+      <ul>
+        <li class="fl"><a href="{% url 'websites_list' %}">Sites proposés</a></li>
         <li class="fl">|</li>
-        <li class="fl"><a href="{% url suggest_website %}">Proposer un site</a></li>
+        <li class="fl"><a href="{% url 'suggest_website' %}">Proposer un site</a></li>
         <li class="fl">|</li>
-        <li class="fl"><a href="{% url contact %}">Contact</a></li>
+        <li class="fl"><a href="{% url 'contact' %}">Contact</a></li>
       </ul>
     </nav>
   </div>
