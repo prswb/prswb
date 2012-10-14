@@ -51,17 +51,17 @@ class ContactPageTest(TestCase):
 
     def test_contact_submission(self):
         # first, we verify that the page exist
-        response = self.client.get('/contact/')
+        response = self.client.get('/fr/contact/')
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, "Contact")
 
         # then we submit the form and verify the redirection
-        response = self.client.post('/contact/', {
+        response = self.client.post('/fr/contact/', {
             "subject": "A test",
             "sender": "test@example.org",
             "message": "This website is wonderful!"
         })
-        self.assertRedirects(response, '/contact/merci/')
+        self.assertRedirects(response, '/fr/contact/merci/')
 
         # we verify that emails has been sent to the admin and the user
         self.assertEqual(len(mail.outbox), 2)
@@ -72,53 +72,52 @@ class ContactPageTest(TestCase):
 
     def test_bad_submission(self):
         # invalid subject
-        response = self.client.post('/contact/', {
+        response = self.client.post('/fr/contact/', {
             "subject": "",
             "sender": "test@example.org",
             "message": "This website is wonderful!"
         })
         self.assertFormError(response, 'form', 'subject',
-            [u'Veuillez renseignez les champs obligatoires.'])
+            [u'Un sujet doit \xeatre renseign\xe9.'])
 
-        response = self.client.post('/contact/', {
+        response = self.client.post('/fr/contact/', {
             "subject": "fo",
             "sender": "test@example.org",
             "message": "This website is wonderful!"
         })
         self.assertFormError(response, 'form', 'subject',
-            [u'Ce champ est obligatoire. Un minimum de 3 caract\xe8res est requis.'])
+            [u'3 caract\xe8res minimum sont requis.'])
 
         # invalid sender
-        response = self.client.post('/contact/', {
+        response = self.client.post('/fr/contact/', {
             "subject": "A test",
             "sender": "",
             "message": "This website is wonderful!"
         })
         self.assertFormError(response, 'form', 'sender',
-            [u'Veuillez renseignez les champs obligatoires.'])
+            [u'Une adresse email est demand\xe9e.'])
 
-        response = self.client.post('/contact/', {
+        response = self.client.post('/fr/contact/', {
             "subject": "A test",
             "sender": "foo",
             "message": "This website is wonderful!"
         })
         self.assertFormError(response, 'form', 'sender',
-            [u'Veuillez saisir une adresse email valide.'])
+            [u'Une adresse email valide doit \xeatre renseign\xe9e.'])
 
         # invalid message
-        response = self.client.post('/contact/', {
+        response = self.client.post('/fr/contact/', {
             "subject": "A test",
             "sender": "test@example.org",
             "message": ""
         })
         self.assertFormError(response, 'form', 'message',
-            [u'Veuillez renseignez les champs obligatoires.'])
+            [u'Un message est demand\xe9.'])
 
-        response = self.client.post('/contact/', {
+        response = self.client.post('/fr/contact/', {
             "subject": "A test",
             "sender": "test@example.org",
             "message": "foobar"
         })
         self.assertFormError(response, 'form', 'message',
-            [u'Ce champ est obligatoire. Un minimum de 8 caract\xe8res est requis.'])
-
+            [u'8 caract\xe8res minimum sont requis.'])

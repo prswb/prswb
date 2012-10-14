@@ -2,6 +2,7 @@
 
 from django.db import models
 from django.forms import URLField
+from django.utils.translation import ugettext as _
 from bs4 import BeautifulSoup
 
 import requests
@@ -39,9 +40,9 @@ class Website(models.Model):
     request_type = models.CharField(
         max_length=30,
         choices=(
-            (REQUEST_COMMENT, u"Commentaire"),
-            (REQUEST_IMPROVE, u"Suggestion d'amélioration"),
-            (REQUEST_DEBUG, u"Problème/bug"),
+            (REQUEST_COMMENT, _(u"Commentaire")),
+            (REQUEST_IMPROVE, _(u"Suggestion d'amélioration")),
+            (REQUEST_DEBUG, _(u"Problème/bug")),
             )
         )
     date = models.DateTimeField(
@@ -59,9 +60,9 @@ class Website(models.Model):
 def get_url_informations(url):
     """Get informations about a url"""
 
-    error_invalid = False, { 'error': u'Url invalide' }
-    error_exist   = False, { 'error': u'Cette url existe déjà' }
-    error_connect = False, { 'error': u'Impossible de se connecter au site' }
+    error_invalid = False, {'error': _(u'Url invalide')}
+    error_exist = False, {'error': _(u'Cette url existe déjà')}
+    error_connect = False, {'error': _(u'Impossible de se connecter au site')}
 
     # Check url is valid
     try:
@@ -81,7 +82,7 @@ def get_url_informations(url):
         soup        = BeautifulSoup(req.text)
         title       = soup.title.string
         description = soup.findAll('meta',
-            attrs={'name':re.compile("^description$", re.I)})[0].get('content')
+            attrs={'name': re.compile("^description$", re.I)})[0].get('content')
     else:
         return error_connect
 

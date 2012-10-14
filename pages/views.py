@@ -27,6 +27,7 @@ def contact(request):
         form = ContactForm()
     return render(request, 'pages/contact.html', {'form': form})
 
+
 def confirm_contact(request):
     """ Contact form confirmation """
     return render(request, 'pages/confirm_contact.html')

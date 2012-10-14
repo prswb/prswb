@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+{% load i18n %}
+
+{% block content %}
+<section class="home-illustration">
+  <div class="container">
+    <h1 class="illustration-title">
+      {% blocktrans %}Contribute to <span>website evolution</span>{% endblocktrans %}
+    </h1>
+  </div>
+</section>
+<section class="clearfix container">
+  <h1 class="home-title"><span>UX</span>periment, {% trans "the Web, better." %}</h1>
+  <div class="fl col3">
+   <img src="{{ STATIC_URL }}img/home_1.jpg" alt="illu c'est quoi?">
+   <h2>{% trans "UXperiment, le wat?" %}</h2>
+   <p>{% trans "This original project intends to let users discuss and share their experience about websites" %}</p>
+ </div>
+ <div class="fl col3">
+   <img src="{{ STATIC_URL }}img/home_2.jpg" alt="illu proposer site">
+   <h2>{% trans "Suggest a website" %}</h2>
+   <p>
+    {% trans "Once registered, submit a website and tell the world how you've experienced it, and how it could be enhanced." %}
+    {% trans "Other users then may engage a discussion about it." %}
+  </p>
+ </div>
+ <div class="fl col3">
+   <img src="{{ STATIC_URL }}img/home_3.jpg" alt="illu contribuer evolution">
+   <h2>{% trans "Help to make it better!" %}</h2>
+   <p>{% trans "Search for already reviewed websites, add your comments & experience, suggest enhancements and report problems." %}</p>
+ </div>
+</section>
+<section class="home-with-bg">
+  <div class="container clearfix">
+    <h1 class="home-title"><span>{% trans "Ok." %}</span> {% trans "How does it work?" %}</h1>
+    <div class="fl col4">
+      <img src="{{ STATIC_URL }}img/expli1.png" alt="">
+      <h3>
+        {% trans "Submit your site." %}
+        <span>({% trans "We'll take care of it" %})</span>
+      </h3>
+    </div>
+    <div class="fl col4">
+      <img src="{{ STATIC_URL }}img/expli2.png" alt="">
+      <h3>
+        {% trans "Relax." %}
+        <span>({% trans "zombo.com" %})</span><!-- mangerbouger.fr -->
+      </h3>
+    </div>
+    <div class="fl col4">
+      <img src="{{ STATIC_URL }}img/expli3.png" alt="">
+      <h3>
+        {% trans "Get feedback." %}
+        <span>({% trans "honest, always" %})</span> <!-- (pertinentes, toujours) -->
+      </h3>
+    </div>
+    <div class="fl col4">
+      <img src="{{ STATIC_URL }}img/expli4.png" alt="">
+      <h3>
+        {% trans "Become powerful" %}
+        <span>({% trans "world is yours" %})</span>
+      </h3>
+    </div>
+  </div>
+</section>
+{% endblock %}

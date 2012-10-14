@@ -1,10 +1,11 @@
 {% extends "layout.html" %}
+{% load i18n %}
 
 {% block content %}
-<h1>Proposer un site</h1>
+<h1>{% trans "Suggest a website" %}</h1>
 <form method="post" action="{% url suggest_website %}">
     {% csrf_token %}
     {{ form.as_p }}
-    <input type="submit" />
+    <input type="submit" value="{% trans "Submit" %}" />
 </form>
 {% endblock %}

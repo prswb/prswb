@@ -40,18 +40,30 @@
 
     <nav class="fr">
       <ul>
-        <li class="fl"><a href="{% url 'websites_list' %}">Sites proposés</a></li>
+        <li class="fl"><a href="{% url 'websites_list' %}">{% trans "Suggested websites" %}</a></li>
         <li class="fl">|</li>
-        <li class="fl"><a href="{% url 'suggest_website' %}">Proposer un site</a></li>
+        <li class="fl"><a href="{% url 'suggest_website' %}">{% trans "Suggest a website" %}</a></li>
         <li class="fl">|</li>
-        <li class="fl"><a href="{% url 'contact' %}">Contact</a></li>
+        <li class="fl"><a href="{% url 'contact' %}">{% trans "Contact" %}</a></li>
+        {% get_language_info_list for LANGUAGES as languages %}
+        {% get_current_language as LANGUAGE_CODE %}
+        {% for language in languages %}
+          <li class="fl">|</li>
+          <li class="fl">
+            {% if LANGUAGE_CODE == language.code %}
+              {{ language.name_local|upper }}
+            {% else %}
+              <a href="{% url 'change_language' lang=language.code %}">{{ language.name_local }}</a>
+            {% endif %}
+          </li>
+        {% endfor %}
       </ul>
     </nav>
   </div>
 </header>
 
 <section id="content" class="clearfix">
-  {% block content %}No content is present{% endblock %}
+  {% block content %}{% trans "No content yet." %}{% endblock %}
 </section>
 
 <footer>
@@ -59,7 +71,7 @@
     <img src="{{ STATIC_URL }}img/logo-grey.png" alt="Logo UXperiment footer" class="fl">
    <nav class="fr">
      <ul>
-      <li class="fl"><a href="/pages/mentions-legales">Mentions légales</a></li>
+      <li class="fl"><a href="/pages/mentions-legales">{% trans "Legal" %}</a></li>
      </ul>
    </nav>
  </div>

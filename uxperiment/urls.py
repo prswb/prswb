@@ -1,17 +1,22 @@
 # -*- coding: utf-8 -*-
+
 from django.conf.urls import patterns, include, url
-from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.conf import settings
+from django.conf.urls.i18n import i18n_patterns
 from django.contrib import admin
 
+from generic import views as generic_views
 from pages import views as pages_views
 from websites import views as websites_views
 
 
 admin.autodiscover()
 
-urlpatterns = patterns('',
+urlpatterns = i18n_patterns('',
     url(r'^$', pages_views.dashboard, name='homepage'),
+    url(r'^i18n/(?P<lang>[a-z]{2,})/$', generic_views.change_language,
+        name='change_language'),
+
     url(r'^sites-proposes/$', websites_views.list, name='websites_list'),
 
     url(r'^admin/', include(admin.site.urls)),
@@ -29,10 +34,6 @@ urlpatterns = patterns('',
     url(r'^informations-sur-un-site/$', 'websites.views.informations',
         name='informations_website'),
 
-    # pages
-    url(r'^pages/(?P<slug>[-\w\d]+)/$', 'pages.views.markdown_page',
-        name='markdown_page'),
-
     # registration, accounts
     url(r'^compte/', include('registration.backends.default.urls')),
 )
@@ -40,10 +41,15 @@ urlpatterns = patterns('',
 # local dev
 
 urlpatterns += patterns('',
-     url(r'^static/(?P<path>.*)$', 'django.views.static.serve', {
-            'document_root': settings.STATIC_ROOT,
-        }),
-     url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {
-            'document_root': settings.MEDIA_ROOT,
-        }),
+    # pages
+    url(r'^pages/(?P<slug>[-\w\d]+)/$', 'pages.views.markdown_page',
+        name='markdown_page'),
+
+    url(r'^static/(?P<path>.*)$', 'django.views.static.serve', {
+           'document_root': settings.STATIC_ROOT,
+       }),
+
+    url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {
+           'document_root': settings.MEDIA_ROOT,
+       }),
 )

@@ -4,7 +4,7 @@ from django.shortcuts import render
 from django.http import HttpResponseRedirect, HttpResponse, Http404
 from django.views.decorators.csrf import csrf_protect
 from django.core.urlresolvers import reverse
-from django.conf import settings
+from django.utils.translation import ugettext as _
 from django.contrib.auth.decorators import login_required
 from websites.models import get_url_informations
 from websites.forms import SuggestForm
@@ -47,7 +47,7 @@ def informations(request):
     """ Get informations about a website """
     if request.is_ajax():
         success = False
-        infos = { 'error': u'Requête invalide' }
+        infos = {'error': _(u'Requête invalide')}
         if 'GET' == request.method:
             success, infos = get_url_informations(request.GET['url'])
 
@@ -60,4 +60,3 @@ def informations(request):
             content_type="application/json", status=status)
     else:
         raise Http404
-

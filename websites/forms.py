@@ -5,5 +5,3 @@ class SuggestForm(forms.ModelForm):
     class Meta:
         model = Website
         fields = ('url', 'title', 'description')
-
-
