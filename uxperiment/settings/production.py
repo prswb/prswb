@@ -1,11 +1,18 @@
-from uxperiment.settings.base import *
+import os
+
+from .base import *
+
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': '',                      # Or path to database file if using sqlite3.
-        'USER': '',                      # Not used with sqlite3.
-        'PASSWORD': '',                  # Not used with sqlite3.
-        'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
-        'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
+        'ENGINE':   'django.db.backends.postgresql_psycopg2',
+        'USER':     os.environ.get('UXPERIMENT_POSTGRES_USERNAME', 'postgres'),
+        'PASSWORD': os.environ.get('UXPERIMENT_POSTGRES_PASSWORD'),
+        'HOST':     os.environ.get('UXPERIMENT_POSTGRES_HOST', 'localhost'),
+        'PORT':     os.environ.get('UXPERIMENT_POSTGRES_PORT', 5432),
     }
 }
+
+EMAIL_RECIPIENT = os.environ.get('EMAIL_RECIPIENT')
+EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')

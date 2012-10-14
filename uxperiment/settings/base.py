@@ -1,5 +1,7 @@
 # Django settings for uxperiment project.
+
 import os.path
+
 ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 
 DEBUG = False
@@ -15,7 +17,7 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'base',                      # Or path to database file if using sqlite3.
+        'NAME':   'dummy.db',                   # Or path to database file if using sqlite3.
     }
 }
 
