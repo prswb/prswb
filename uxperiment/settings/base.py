@@ -194,7 +194,7 @@ EMAIL_RECIPIENT = 'admin@uxperiment.com'
 # Profiles
 
 LOGIN_URL = '/compte/login/'
-LOGIN_REDIRECT_URL = '/compte/profil/'
+LOGIN_REDIRECT_URL = '/'  # once profiles will exist, '/compte/profil/'
 LOGOUT_URL = '/compte/logout/'
 
 # Registration settings
