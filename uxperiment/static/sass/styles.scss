@@ -18,7 +18,10 @@
 	background: $secondary-color;
 	color: $color-for-bg;
 	font-weight: 600;
-	text-decoration: none;
+	text-decoration: none; 
+	a {
+		color: $links-with-bg;
+	}
 }
 nav {
 	li {

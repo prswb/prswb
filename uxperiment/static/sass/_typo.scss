@@ -32,16 +32,26 @@ body {
 }
 
 h1 {
+    margin: 0 0 0.972em;
 	font-weight: 300;
+    font-size: 2.250em ;
 	span {
 		font-weight: 800;
 	}
 }
 h2 {
+    margin: 0 0 0.682em;
     font-weight: 600;
+    font-size: 1.375em;
+}
+h3 {
+    margin: 0 0 1.250em;
+    font-weight: 600;
+    font-size: 1em;
 }
 a {
 	color: $links;
+    text-decoration: underline;
 	&:hover { color: $links-hover;}
 }
 

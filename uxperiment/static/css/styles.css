@@ -22,15 +22,25 @@ body {
   color: #4d4d4d; }
 
 h1 {
-  font-weight: 300; }
+  margin: 0 0 0.972em;
+  font-weight: 300;
+  font-size: 2.250em; }
   h1 span {
     font-weight: 800; }
 
 h2 {
-  font-weight: 600; }
+  margin: 0 0 0.682em;
+  font-weight: 600;
+  font-size: 1.375em; }
+
+h3 {
+  margin: 0 0 1.250em;
+  font-weight: 600;
+  font-size: 1em; }
 
 a {
-  color: #29abe2; }
+  color: #29abe2;
+  text-decoration: underline; }
   a:hover {
     color: #000077; }
 
@@ -160,6 +170,8 @@ ul {
   color: white;
   font-weight: 600;
   text-decoration: none; }
+  .btn-subscribe a {
+    color: white; }
 
 nav li {
   margin: 0 15px 0 0; }
