@@ -43,15 +43,14 @@ urlpatterns += patterns('',
     # pages
     url(r'^pages/(?P<slug>[-\w\d]+)/$', 'pages.views.markdown_page',
         name='markdown_page'),
+    # imagefit
     url(r'^imagefit/', include('imagefit.urls')),
-    )
-
-if settings.DEBUG:
-    urlpatterns += patterns('',
-        url(r'^static/(?P<path>.*)$', 'django.views.static.serve', {
-               'document_root': settings.STATIC_ROOT,
-           }),
-        url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {
-               'document_root': settings.MEDIA_ROOT,
-           }),
-    )
+    # static files
+    url(r'^static/(?P<path>.*)$', 'django.views.static.serve', {
+           'document_root': settings.STATIC_ROOT,
+       }),
+    # media files
+    url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {
+           'document_root': settings.MEDIA_ROOT,
+       }),
+)
