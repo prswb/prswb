@@ -16,10 +16,7 @@ class WebsiteFixtures(object):
             title="Prswb",
             url="http://prswb.fr",
             description="Scrum vu des petites tranchees.",
-            request_type=Website.REQUEST_COMMENT,
-            picture=os.path.join(os.path.dirname(__file__),
-                                 'fixtures',
-                                 'green-nature.jpg'))
+            request_type=Website.REQUEST_COMMENT)
 
     def generate_websites(self):
         return Website.objects.create(**self.get_config())
@@ -56,8 +53,10 @@ class SubmitWebsiteTest(TransactionTestCase, WebsiteFixtures):
         response = self.client.get(reverse('suggest_website'), follow=True)
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'websites/suggest.html')
-        response = self.client.post('/fr/proposer-un-site/', self.get_config(),
-            follow=True)
+        with open(os.path.join(os.path.dirname(__file__), 'fixtures', 'green-nature.jpg')) as fp:
+            website_data = self.get_config()
+            website_data.update(picture=fp)
+            response = self.client.post(reverse('suggest_website'), website_data, follow=True)
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'websites/confirm_suggest.html')
         response = self.client.get(reverse('websites_list'))
