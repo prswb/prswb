@@ -2,7 +2,10 @@
 
 import os
 
-from django.test import TestCase, Client
+from django.core.urlresolvers import reverse
+from django.test import TestCase, TransactionTestCase
+
+from django.contrib.auth.models import User
 
 from models import Website
 
@@ -14,10 +17,9 @@ class WebsiteFixtures(object):
             url="http://prswb.fr",
             description="Scrum vu des petites tranchees.",
             request_type=Website.REQUEST_COMMENT,
-            picture=os.path.join(
-                os.path.dirname(__file__), 'fixtures', 'green-nature.jpg'
-                )
-            )
+            picture=os.path.join(os.path.dirname(__file__),
+                                 'fixtures',
+                                 'green-nature.jpg'))
 
     def generate_websites(self):
         return Website.objects.create(**self.get_config())
@@ -29,7 +31,6 @@ class WebsiteModelTest(TestCase, WebsiteFixtures):
 
 class ViewListTest(TestCase, WebsiteFixtures):
     def setUp(self):
-        self.client = Client()
         self.website = self.generate_websites()
 
     def test_displays_website(self):
@@ -39,16 +40,28 @@ class ViewListTest(TestCase, WebsiteFixtures):
         self.assertIn(self.website.title, response.content)
 
 
-class SubmitWebsiteTest(TestCase, WebsiteFixtures):
+class SubmitWebsiteTest(TransactionTestCase, WebsiteFixtures):
     def setUp(self):
-        self.client = Client()
+        self.user = User.objects.create(username='jdoe')
+        self.user.set_password('jdoepswd')
+        self.user.save()
 
-    def test_suggest_website(self):
-        response = self.client.post('/proposer-un-site/', self.get_config())
-        # FIXME : client.post() has no way to post a file
-        #self.assertEqual(response.status_code, 302)
-        #response = self.client.get('/sites-proposes/')
-        #self.assertIn("http://prswb.fr", response.content)
+    def test_suggest_website_unauthenticated(self):
+        response = self.client.get(reverse('suggest_website'), follow=True)
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'registration/login.html')
+
+    def test_suggest_website_authenticated(self):
+        self.client.login(username='jdoe', password='jdoepswd')
+        response = self.client.get(reverse('suggest_website'), follow=True)
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'websites/suggest.html')
+        response = self.client.post('/fr/proposer-un-site/', self.get_config(),
+            follow=True)
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'websites/confirm_suggest.html')
+        response = self.client.get(reverse('websites_list'))
+        self.assertIn("http://prswb.fr", response.content)
 
 
 class UtilsTest(TestCase):

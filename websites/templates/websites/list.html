@@ -2,23 +2,28 @@
 {% load i18n %}
 
 {% block content %}
-<h1>{% trans "Suggested websites" %}</h1>
-{% if websites %}
-<ul>
-    {% for website in websites %}
-    <li>
-        {{ website.title }}
-        <a href="#" taget="_blank">{{ website.title }}</a>
-        {% if website.picture %}
-            <img src="/media/{{ website.picture }}" alt="{{ website.title }} ({{ website.url }})" />
-        {% endif %}
-        <p>{% trans "submitted on" %} {{ website.date }}</p>
-        <a href="{{ website.url }}" taget="_blank">{{ website.url }}</a>
-    </li>
-    {% endfor %}
-</ul>
-{% else %}
-<p>{% trans "No suggested website yet." %}</p>
-<p><a href="{% url suggest_website %}">{% trans "Suggest a website" %}</a></p>
-{% endif %}
+    <h1>{% trans "Suggested websites" %}</h1>
+    {% if websites %}
+        <ul>
+            {% for website in websites %}
+            <li>
+                {{ website.title }}
+                <a href="#" taget="_blank">{{ website.title }}</a>
+                {% if website.picture %}
+                    <img src="/media/{{ website.picture }}" alt="{{ website.title }} ({{ website.url }})" />
+                {% endif %}
+                <p>
+                    {% trans "submitted on" %} {{ website.date }}
+                    {% if website.submitter %}
+                        {% trans "by" %} {{ website.submitter.username }}
+                    {% endif %}
+                </p>
+                <a href="{{ website.url }}" taget="_blank">{{ website.url }}</a>
+            </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>{% trans "No suggested website yet." %}</p>
+        <p><a href="{% url suggest_website %}">{% trans "Suggest a website" %}</a></p>
+    {% endif %}
 {% endblock %}
