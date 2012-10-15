@@ -9,8 +9,7 @@
         <ul>
             {% for website in websites %}
             <li>
-                {{ website.title }}
-                <a href="#" taget="_blank">{{ website.title }}</a>
+                <a href="{{ website.url }}" taget="_blank">{{ website.title }}</a>
                 {% if website.picture %}
                     <img src="{{ website.picture.url|resize:"240x160" }}" alt="{{ website.title }} ({{ website.url }})" />
                 {% else %}
