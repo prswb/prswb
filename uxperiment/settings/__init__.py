@@ -1,16 +1,9 @@
 import os
+import importlib
 
-UXPERIMENT_ENV = os.environ.get('UXPERIMENT_ENV')
-
-if UXPERIMENT_ENV == 'dev':
-    from .dev import *
-elif UXPERIMENT_ENV == 'test':
-    from .test import *
-elif UXPERIMENT_ENV == 'staging':
-    from .staging import *
-elif UXPERIMENT_ENV == 'production':
-    from .production import *
-else:
+try:
+    importlib.import_module(os.environ.get('UXPERIMENT_ENV', 'production'))
+except ImportError:
     from .base import *
 
 # local settings
