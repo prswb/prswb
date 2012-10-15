@@ -1,16 +1,17 @@
 # -*- coding: utf-8 -*-
 import json
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponseRedirect, HttpResponse, Http404
 from django.views.decorators.csrf import csrf_protect
 from django.core.urlresolvers import reverse
 from django.utils.translation import ugettext as _
 from django.contrib.auth.decorators import login_required
+
 from websites.models import get_url_informations
 from websites.forms import SuggestForm
+from models import Website
 from uxperiment.utils import send_message
 
-from models import Website
 
 
 def list(request):
@@ -20,21 +21,22 @@ def list(request):
         )
     return render(request, 'websites/list.html', params)
 
-
-@csrf_protect
-@login_required
 def suggest(request):
-    """ Suggest form
+    """
+    Suggest form
     Display and proceed suggest a website form submission
     """
     if request.method == 'POST':
-        form = SuggestForm(request.POST)
+        form = SuggestForm(request.POST, request.FILES)
         if form.is_valid():
             website = form.save()
-            data = {'website': website.url, 'username': request.user.username,
-                    'sender': request.user.email}
+            data = dict(
+                website=website.url,
+                username=request.user.username,
+                sender=request.user.email,
+                )
             send_message('suggest', data)
-            return HttpResponseRedirect(reverse('confirm_suggest_website'))
+            return redirect('confirm_suggest_website')
     else:
         form = SuggestForm()
     return render(request, 'websites/suggest.html', {'form': form})

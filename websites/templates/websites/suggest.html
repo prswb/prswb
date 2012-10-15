@@ -3,9 +3,12 @@
 
 {% block content %}
 <h1>{% trans "Suggest a website" %}</h1>
-<form method="post" action="{% url suggest_website %}">
+{% if errors %}
+<p class="error">{% trans "Please correct the errors highlighted below." %}</p>
+{% endif %}
+<form method="post" action="." enctype="multipart/form-data">
     {% csrf_token %}
     {{ form.as_p }}
-    <input type="submit" value="{% trans "Submit" %}" />
+    <input type="submit" value="{% trans "Suggest this website" %}" />
 </form>
 {% endblock %}

@@ -1,6 +1,4 @@
-# Django settings for uxperiment project.
-
-import os.path
+import os
 
 ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 
@@ -52,12 +50,12 @@ USE_TZ = True
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/home/media/media.lawrence.com/media/"
-MEDIA_ROOT = ''
+MEDIA_ROOT = os.path.join(ROOT_DIR, 'media')
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
 # Examples: "http://media.lawrence.com/media/", "http://example.com/media/"
-MEDIA_URL = ''
+MEDIA_URL = '/media/'
 
 # Absolute path to the directory static files should be collected to.
 # Don't put anything in this directory yourself; store your static files
@@ -193,13 +191,14 @@ PASSWORD_HASHERS = (
     'django.contrib.auth.hashers.CryptPasswordHasher',
 )
 
+# Email settings
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_RECIPIENT = 'admin@uxperiment.com'
+EMAIL_HOST_USER = ""
+EMAIL_RECIPIENT = "contact@uxperiment.fr"
 
 # Profiles
-
 LOGIN_URL = '/compte/login/'
 LOGIN_REDIRECT_URL = '/'  # once profiles will exist, '/compte/profil/'
 LOGOUT_URL = '/compte/logout/'
