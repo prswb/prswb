@@ -38,18 +38,20 @@ urlpatterns = i18n_patterns('',
     url(r'^compte/', include('registration.backends.default.urls')),
 )
 
-# local dev
-
+# non i18 urls
 urlpatterns += patterns('',
     # pages
     url(r'^pages/(?P<slug>[-\w\d]+)/$', 'pages.views.markdown_page',
         name='markdown_page'),
+    url(r'^imagefit/', include('imagefit.urls')),
+    )
 
-    url(r'^static/(?P<path>.*)$', 'django.views.static.serve', {
-           'document_root': settings.STATIC_ROOT,
-       }),
-
-    url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {
-           'document_root': settings.MEDIA_ROOT,
-       }),
-)
+if settings.DEBUG:
+    urlpatterns += patterns('',
+        url(r'^static/(?P<path>.*)$', 'django.views.static.serve', {
+               'document_root': settings.STATIC_ROOT,
+           }),
+        url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {
+               'document_root': settings.MEDIA_ROOT,
+           }),
+    )

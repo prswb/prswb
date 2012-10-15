@@ -1,5 +1,6 @@
 {% extends "layout.html" %}
 {% load gravatar i18n %}
+{% load imagefit %}
 
 {% block content %}
     <section class="clearfix container main-container">
@@ -11,7 +12,7 @@
                 {{ website.title }}
                 <a href="#" taget="_blank">{{ website.title }}</a>
                 {% if website.picture %}
-                    <img src="{{ MEDIA_URL }}{{ website.picture }}" alt="{{ website.title }} ({{ website.url }})" />
+                    <img src="{{ website.picture.url|resize:"240x160" }}" alt="{{ website.title }} ({{ website.url }})" />
                 {% endif %}
                 <p>
                     {% trans "submitted on" %} {{ website.date }}

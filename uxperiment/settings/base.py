@@ -141,6 +141,7 @@ VENDOR_APPS = (
     'gravatar',
     'south',
     'registration',
+    'imagefit',
 )
 
 # local apps
@@ -206,3 +207,5 @@ LOGOUT_URL = '/compte/logout/'
 
 # Registration settings
 ACCOUNT_ACTIVATION_DAYS = 7
+
+IMAGEFIT_ROOT = ROOT_DIR
