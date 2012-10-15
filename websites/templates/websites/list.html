@@ -11,7 +11,7 @@
                 {{ website.title }}
                 <a href="#" taget="_blank">{{ website.title }}</a>
                 {% if website.picture %}
-                    <img src="/media/{{ website.picture }}" alt="{{ website.title }} ({{ website.url }})" />
+                    <img src="{{ MEDIA_URL }}{{ website.picture }}" alt="{{ website.title }} ({{ website.url }})" />
                 {% endif %}
                 <p>
                     {% trans "submitted on" %} {{ website.date }}
