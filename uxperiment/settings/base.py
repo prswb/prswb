@@ -138,6 +138,7 @@ DJANGO_APPS = (
 
 # third party packages
 VENDOR_APPS = (
+    'gravatar',
     'south',
     'registration',
 )

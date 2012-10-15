@@ -1,5 +1,5 @@
 {% extends "layout.html" %}
-{% load i18n %}
+{% load gravatar i18n %}
 
 {% block content %}
     <section class="clearfix container main-container">
@@ -16,7 +16,7 @@
                 <p>
                     {% trans "submitted on" %} {{ website.date }}
                     {% if website.submitter %}
-                        {% trans "by" %} {{ website.submitter.username }}
+                        {% trans "by" %} <img src="{% gravatar_for_email request.user.email 16 %}" alt=""> {{ website.submitter.username }}
                     {% endif %}
                 </p>
                 <a href="{{ website.url }}" taget="_blank">{{ website.url }}</a>
