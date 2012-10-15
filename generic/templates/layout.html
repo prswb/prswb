@@ -1,0 +1,86 @@
+{% load i18n %}
+{% load url from future %}
+<!DOCTYPE html>
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>{% block meta_title %}{% endblock %}</title>
+  <meta name="description" content="{% block meta_description %}{% endblock %}" />
+  <meta name="language" content="{% block meta_language %}fr{% endblock %}" />
+  <meta name="robots" content="{{ meta.robots }}" />
+
+  <title></title>
+
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+  <link rel="shortcut icon" type="image/x-icon" href="{{ STATIC_URL }}img/favicon.ico"/>
+  <link rel="icon" type="image/png" href="{{ STATIC_URL }}img/favicon.png"/>
+
+  <link rel="stylesheet" href="{{ STATIC_URL }}css/normalize.css">
+  <link rel="stylesheet" href="{{ STATIC_URL }}css/styles.css">
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,800,300' rel='stylesheet' type='text/css'>
+
+</head>
+<body>
+<header class="clearfix">
+  <div class="header-block container">
+    <a href="{% url 'homepage' %}" id="logo" class="fl">
+      <img src="{{ STATIC_URL }}img/logo.png" alt="Logo UXperiment">
+    </a>
+
+    <div class="btn-subscribe fr">
+      {% if user.is_authenticated %}
+        {% trans "Hello," %} <a href="#to-profile">{{ user.username }}</a> /
+        <a href="{% url 'auth_logout' %}">{% trans "Log out" %}</a>
+      {% else %}
+        <a href="{% url 'registration_register' %}">{% trans "Register" %}</a> /
+        <a href="{% url 'auth_login' %}">{% trans "Log in" %}</a>
+      {% endif %}
+    </div>
+
+    <nav class="fr">
+      <ul>
+        <li class="fl"><a href="{% url 'websites_list' %}">{% trans "Suggested websites" %}</a></li>
+        <li class="fl">|</li>
+        <li class="fl"><a href="{% url 'suggest_website' %}">{% trans "Suggest a website" %}</a></li>
+        <li class="fl">|</li>
+        <li class="fl"><a href="{% url 'contact' %}">{% trans "Contact" %}</a></li>
+        {% get_language_info_list for LANGUAGES as languages %}
+        {% get_current_language as LANGUAGE_CODE %}
+        {% for language in languages %}
+          <li class="fl">|</li>
+          <li class="fl">
+            {% if LANGUAGE_CODE == language.code %}
+              {{ language.name_local|upper }}
+            {% else %}
+              <a href="{% url 'change_language' lang=language.code %}">{{ language.name_local }}</a>
+            {% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section id="content" class="clearfix">
+  {% block content %}{% trans "No content yet." %}{% endblock %}
+</section>
+
+<footer>
+  <div class="footer-block container clearfix">
+    <img src="{{ STATIC_URL }}img/logo-grey.png" alt="Logo UXperiment footer" class="fl">
+   <nav class="fr">
+     <ul>
+      <li class="fl"><a href="/pages/mentions-legales">{% trans "Legal" %}</a></li>
+     </ul>
+   </nav>
+ </div>
+</footer>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.8.0.min.js"><\/script>')</script>
+<!-- <script src="js/plugins.js"></script>
+<script src="js/main.js"></script> -->
+
+</body>
+</html>

@@ -22,32 +22,36 @@ body {
   color: #4d4d4d; }
 
 h1 {
-  font-weight: 300; }
+  margin: 0 0 0.972em;
+  font-weight: 300;
+  font-size: 2.250em; }
   h1 span {
     font-weight: 800; }
 
 h2 {
-  font-weight: 600; }
+  margin: 0 0 0.682em;
+  font-weight: 600;
+  font-size: 1.375em; }
+
+h3 {
+  margin: 0 0 1.250em;
+  font-weight: 600;
+  font-size: 1em; }
 
 a {
-  color: #29abe2; }
+  color: #29abe2;
+  text-decoration: underline; }
   a:hover {
     color: #000077; }
 
 nav {
-  font-size: 16px; }
+  font-size: 1em; }
+
+input {
+  font-size: 0.938em; }
 
 /* Choose a grid width, the number of columns and the margin between columns. The result of the following equation has to be an integer, not a fraction: (width - (columns - 1) * col_margin) / columns = N */
 /* total with of page */
-/* number of columns */
-/* margin between columns */
-/* math magic */
-/* create row div */
-/* create a column div */
-/* make an element span n columns */
-/* the last column in a row needs this */
-/* prepend n blank columns */
-/* append n blank columns */
 .container {
   margin: 0 auto;
   width: 960px; }
@@ -60,14 +64,17 @@ header {
   header nav {
     margin: 40px 0 0; }
 
+.main-container {
+  margin-bottom: 70px; }
+
 footer {
   background: #f2f2f2; }
   footer .footer-block {
     padding: 30px 0 20px;
     border-top: 1px solid #e6e6e6;
-    background: url(../img/bg-footer.png) right 20px no-repeat; }
+    background: url(../img/bg-footer.png) right 23px no-repeat; }
     footer .footer-block nav {
-      margin: 10px 40px 0 0; }
+      margin: 5px 40px 0 0; }
 
 .col3 {
   margin: 0 50px 70px 0;
@@ -99,6 +106,26 @@ footer {
       font-family: "museo_300regular", Arial, sans-serif;
       font-size: 16px;
       color: #999; }
+
+input, textarea {
+  padding: 4px;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  border: 1px solid #e6e6e6; }
+
+input[type="submit"] {
+  padding: 5px 10px;
+  background: #29abe2;
+  color: #fff;
+  border: none; }
+
+.errorlist {
+  float: right;
+  margin: 0 280px 0 0; }
+  .errorlist li {
+    list-style-type: none;
+    color: #ed1e79; }
 
 /*Floats*/
 .fl {
@@ -143,6 +170,8 @@ ul {
   color: white;
   font-weight: 600;
   text-decoration: none; }
+  .btn-subscribe a {
+    color: white; }
 
 nav li {
   margin: 0 15px 0 0; }

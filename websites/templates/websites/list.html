@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+{% load gravatar i18n %}
+
+{% block content %}
+    <section class="clearfix container main-container">
+        <h1>{% trans "Suggested websites" %}</h1>
+    {% if websites %}
+        <ul>
+            {% for website in websites %}
+            <li>
+                {{ website.title }}
+                <a href="#" taget="_blank">{{ website.title }}</a>
+                {% if website.picture %}
+                    <img src="{{ MEDIA_URL }}{{ website.picture }}" alt="{{ website.title }} ({{ website.url }})" />
+                {% endif %}
+                <p>
+                    {% trans "submitted on" %} {{ website.date }}
+                    {% if website.submitter %}
+                        {% trans "by" %} <img src="{% gravatar_for_email request.user.email 16 %}" alt=""> {{ website.submitter.username }}
+                    {% endif %}
+                </p>
+                <a href="{{ website.url }}" taget="_blank">{{ website.url }}</a>
+            </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>{% trans "No suggested website yet." %}</p>
+        <p><a href="{% url suggest_website %}">{% trans "Suggest a website" %}</a></p>
+    {% endif %}
+    </section>
+{% endblock %}

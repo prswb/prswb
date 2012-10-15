@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% load i18n %}
+{% load url from future %}
+
+{% block content %}
+    <section class="clearfix container main-container">
+        <h1>{% trans "Contact" %}</h1>
+        <form method="post" action="{% url "contact" %}">
+            {% csrf_token %}
+            {{ form.subject.errors }}
+            <p>{{ form.subject }}</p>
+
+            {{ form.sender.errors }}
+            <p>{{ form.sender }}</p>
+
+            {{ form.message.errors }}
+            <p>{{ form.message }}</p>
+            <input type="submit" value="&gt; {% trans "Send" %}" />
+        </form>
+    </section>
+{% endblock %}

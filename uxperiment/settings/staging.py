@@ -1,13 +1,15 @@
-from uxperiment.settings.base import *
-import dj_database_url
 import os
+import dj_database_url
 
-DATABASES = {'default': dj_database_url.config(default='postgres://localhost')}
+from .base import *
+
 
 INSTALLED_APPS += (
     'gunicorn',
 )
 
-EMAIL_RECIPIENT = os.environ['EMAIL_RECIPIENT']
-EMAIL_HOST_USER = os.environ['EMAIL_HOST_USER']
-EMAIL_HOST_PASSWORD = os.environ['EMAIL_HOST_PASSWORD']
+DATABASES = {'default': dj_database_url.config(default='postgres://localhost')}
+
+EMAIL_RECIPIENT = os.environ.get('EMAIL_RECIPIENT')
+EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
