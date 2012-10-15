@@ -40,9 +40,9 @@ class Website(models.Model):
     request_type = models.CharField(
         max_length=30,
         choices=(
-            (REQUEST_COMMENT, _(u"Commentaire")),
-            (REQUEST_IMPROVE, _(u"Suggestion d'amélioration")),
-            (REQUEST_DEBUG, _(u"Problème/bug")),
+            (REQUEST_COMMENT, _(u"Comment")),
+            (REQUEST_IMPROVE, _(u"Enhancement suggestion")),
+            (REQUEST_DEBUG, _(u"Problem or bug")),
             )
         )
     date = models.DateTimeField(
@@ -60,9 +60,9 @@ class Website(models.Model):
 def get_url_informations(url):
     """Get informations about a url"""
 
-    error_invalid = False, {'error': _(u'Url invalide')}
-    error_exist = False, {'error': _(u'Cette url existe déjà')}
-    error_connect = False, {'error': _(u'Impossible de se connecter au site')}
+    error_invalid = False, {'error': _(u'Invalid URL')}
+    error_exist = False, {'error': _(u'This URL has already been submitted')}
+    error_connect = False, {'error': _(u'Failed at opening the URL')}
 
     # Check url is valid
     try:

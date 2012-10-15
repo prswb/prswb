@@ -49,7 +49,7 @@ def informations(request):
     """ Get informations about a website """
     if request.is_ajax():
         success = False
-        infos = {'error': _(u'Requête invalide')}
+        infos = {'error': _(u'Invalid request')}
         if 'GET' == request.method:
             success, infos = get_url_informations(request.GET['url'])
 
