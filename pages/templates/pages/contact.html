@@ -2,14 +2,13 @@
 {% load i18n %}
 {% load url from future %}
 {% block meta_title %}Contact{% endblock %}
+{% block meta_description %}UXperiment est un site qui se veut collaboratif. Nous sommes à l'écoute de toutes remarques qui puissent nous faire avancer. N'hésitez pas à nous contacter, même pour nous dire 3 mots ;){% endblock %}
 {% block content %}
     <section class="clearfix container main-container">
         <h1>{% trans "Contact" %}</h1>
-        <p class="chapo">
-        UXperiment est un site qui se veut collaboratif. <br/>
-        Nous sommes à l'écoute de toutes remarques qui puissent nous faire avancer. <br/>
-        N'hésitez pas à nous contacter, même pour nous dire 3 mots ;) 
-        </p>
+       <p>UXperiment, c’est le mariage de l’experience utilisateur ET de l’utilisateur. Et ici, l'utilisateur, c’est vous.</p>
+<p>Nous sommes ouvert à toute remarque, prise de contact, collaboration, invitation à des banquets et divers apéro. S'il s’agit de ces 2 derniers, sachez que nous sommes toujours prêt à nous sacrifier pour le bien commun, donc n’ayez aucune hésitations.</p>
+<p>Dans les autres cas, nous serons aussi très heureux de vous répondre.</p>
         <form method="post" action="{% url "contact" %}">
             {% csrf_token %}
             {{ form.subject.errors }}
