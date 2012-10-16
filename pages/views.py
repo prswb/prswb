@@ -51,6 +51,8 @@ def markdown_page(request, slug):
     except IOError:
         # TODO: Shouldn't we log these kinds of errors?
         messages.error(request, _(u"Unable to render page, sorry."))
+    finally:
+        input_file.close()
     return render(request, 'pages/markdown.html', {
         'html': markdown.markdown(text),
     })
