@@ -160,3 +160,39 @@ Travis-CI Test Environment
 --------------------------
 
 The `.travis.yml` file at the root of the repository contains the required configuration.
+
+Code review
+-----------
+
+Somebody submitted a new pull-request, let's say: https://github.com/prswb/prswb/pull/24
+
+This is a pull-request from `n1k0` on his `i18n-pages` branch. To retrieve the branch in order to test it:
+
+```
+$ git remote add n1k0 https://github.com/n1k0/prswb.git
+$ git fetch n1k0 i18n-pages
+From https://github.com/n1k0/prswb
+ * branch            i18n-pages -> FETCH_HEAD
+$ git checkout -b pr-24
+Switched to a new branch 'pr-24'
+$ git pull --rebase n1k0 i18n-pages
+From https://github.com/n1k0/prswb
+ * branch            i18n-pages -> FETCH_HEAD
+```
+
+Now you can launch tests, verify scenario and so on. To get back on master:
+
+```
+$ git checkout master
+Switched to branch 'master'
+Your branch is ahead of 'origin/master' by 47 commits.
+```
+
+To sync from central repository:
+
+```
+$ git remote add upstream git://github.com/prswb/prswb.git
+$ git pull upstream master
+From git://github.com/prswb/prswb
+ * branch            master     -> FETCH_HEAD
+```
