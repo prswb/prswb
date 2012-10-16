@@ -1,21 +1,45 @@
 input, textarea {
 	padding: 4px;
+	display: inline-block;
+	width: 560px;
 	-webkit-border-radius: 0;
 	-moz-border-radius: 0;
 	border-radius: 0;
 	border: 1px solid $border;
+	vertical-align: top;
+	&:invalid {
+		border: 2px solid #ff0000;
+	}
+}
+input:focus:required,
+textarea:focus:required:invalid {
+	border: 1px solid #f00;
+}
+label {
+	display: inline-block;
+	width: 150px;
 }
 input[type="submit"] {
 	padding: 5px 10px;
+	margin: 0 0 0 153px;
 	background: $secondary-color;
 	color: #fff;
 	border: none;
+	width: auto;
+}
+input[type="file"] {
+	width: 430px;
 }
 .errorlist {
-	float: right;
-	margin: 0 280px 0 0;
+	margin: 0 0 0 153px; 
+	padding: 0;
 	li {
 		list-style-type: none;
 		color: $error;
+	}
+}
+form {
+	p {
+		margin: 0 0 10px;
 	}
 }

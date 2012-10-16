@@ -21,6 +21,12 @@
 	a {
 		color: $links-with-bg;
 		text-decoration: none; 
+		&:first-child {
+			padding: 0 10px 0 0;
+		}
+		&:last-child {
+			padding: 0 0 0 10px;
+		}
 	}
 }
 nav {
@@ -30,6 +36,9 @@ nav {
 			margin: 0;
 			&:after {
 				content: "";
+			}
+			a {
+				padding: 0;
 			}
 		}
 		&:after {
