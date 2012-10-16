@@ -31,7 +31,7 @@
 
     <div class="btn-subscribe fr">
       {% if user.is_authenticated %}
-        {% trans "Hello," %} <a href="#to-profile">{{ user.username }}</a> /
+        {% trans "Hello," %} {{ user.username }} /
         <a href="{% url 'auth_logout' %}">{% trans "Log out" %}</a>
       {% else %}
         <a href="{% url 'registration_register' %}">{% trans "Register" %}</a> /
@@ -46,17 +46,6 @@
         <li class="fl"><a href="{% url 'suggest_website' %}">{% trans "Suggest a website" %}</a></li>
         <li class="fl">|</li>
         <li class="fl"><a href="{% url 'contact' %}">{% trans "Contact" %}</a></li>
-        {% get_language_info_list for LANGUAGES as languages %}
-        {% for language in languages %}
-          <li class="fl">|</li>
-          <li class="fl">
-            {% if LANGUAGE_CODE == language.code %}
-              {{ language.name_local|upper }}
-            {% else %}
-              <a href="{% url 'change_language' lang=language.code %}">{{ language.name_local }}</a>
-            {% endif %}
-          </li>
-        {% endfor %}
       </ul>
     </nav>
   </div>
