@@ -1,0 +1,66 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-10-14 23:12+0200\n"
+"PO-Revision-Date: 2012-10-14 23:17+0100\n"
+"Last-Translator: Nicolas Perriault <nicolas@perriault.net>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 1.5.4\n"
+
+msgid "3 characters minimum required."
+msgstr "3 caractères minimum sont requis."
+
+msgid "A subject is required."
+msgstr "Un sujet doit être renseigné."
+
+msgid "Subject"
+msgstr "Sujet"
+
+msgid "A valid email address is required"
+msgstr "Une adresse email valide doit être renseignée."
+
+msgid "An email is required."
+msgstr "Une adresse email est demandée."
+
+msgid "Email address"
+msgstr "Adresse email"
+
+msgid "8 characters minimum required."
+msgstr "8 caractères minimum sont requis."
+
+msgid "A message is required."
+msgstr "Un message est demandé."
+
+msgid "Message"
+msgstr "Message"
+
+msgid "Thank you!"
+msgstr "Merci !"
+
+msgid "Your comment on UXperiment has been received."
+msgstr "Votre commentaire sur UXperiment a bien été reçu."
+
+msgid "Thanks for your participation."
+msgstr "Merci de votre participation."
+
+msgid "Cheers,"
+msgstr "À bientôt,"
+
+msgid "The UXperiment team"
+msgstr "L'équipe UXperiment"
+
+msgid "Contact"
+msgstr "Contact"
+
+msgid "Send"
+msgstr "Envoyer"

@@ -5,4 +5,4 @@ env: DJANGO_SETTINGS_MODULE=uxperiment.settings.test
 
 # command to install depencies
 install: pip install -r requirements-dev.txt --use-mirrors
-script: python manage.py test
+script: python manage.py test generic websites pages

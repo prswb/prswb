@@ -1,14 +1,16 @@
 # -*- coding: utf-8 -*-
 
-from django.db import models
-from django.forms import URLField
-from bs4 import BeautifulSoup
-
+import hashlib
+import os
+import re
 import requests
 
-import hashlib
-import re
-import os
+from django.db import models
+from django.forms import URLField
+from django.utils.translation import ugettext as _
+from django.contrib.auth.models import User
+
+from bs4 import BeautifulSoup
 
 
 def website_upload_to(instance, filename):
@@ -21,32 +23,19 @@ class Website(models.Model):
     REQUEST_IMPROVE = 'improve'
     REQUEST_DEBUG = 'debug'
 
-    url = models.URLField(
-        max_length=255,
-        unique=True,
-        )
-    title = models.CharField(
-        max_length=255
-        )
-    description = models.CharField(
-        max_length=255,
-        null=True,
-        )
-    picture = models.ImageField(
-        upload_to=website_upload_to,
-        null=True,
-        )
-    request_type = models.CharField(
-        max_length=30,
-        choices=(
-            (REQUEST_COMMENT, u"Commentaire"),
-            (REQUEST_IMPROVE, u"Suggestion d'amélioration"),
-            (REQUEST_DEBUG, u"Problème/bug"),
-            )
-        )
-    date = models.DateTimeField(
-        auto_now_add=True,
-        )
+    REQUEST_CHOICES = (
+        (REQUEST_COMMENT, _(u"Comment")),
+        (REQUEST_IMPROVE, _(u"Enhancement suggestion")),
+        (REQUEST_DEBUG, _(u"Problem or bug")),
+    )
+
+    submitter = models.ForeignKey(User, null=True)
+    url = models.URLField(max_length=255, unique=True)
+    title = models.CharField(max_length=255)
+    description = models.CharField(max_length=255, null=True)
+    picture = models.ImageField(upload_to=website_upload_to, null=True, blank=True)
+    request_type = models.CharField(max_length=30, choices=REQUEST_CHOICES)
+    date = models.DateTimeField(auto_now_add=True)
 
     def __unicode__(self):
         return unicode(self.title)
@@ -56,12 +45,13 @@ class Website(models.Model):
 
 #----------------------------
 
+
 def get_url_informations(url):
     """Get informations about a url"""
 
-    error_invalid = False, { 'error': u'Url invalide' }
-    error_exist   = False, { 'error': u'Cette url existe déjà' }
-    error_connect = False, { 'error': u'Impossible de se connecter au site' }
+    error_invalid = False, {'error': _(u'Invalid URL')}
+    error_exist = False, {'error': _(u'This URL has already been submitted')}
+    error_connect = False, {'error': _(u'Failed at opening the URL')}
 
     # Check url is valid
     try:
@@ -77,11 +67,11 @@ def get_url_informations(url):
     # Get informations
     req = requests.get(clean_url)
     if 200 == req.status_code:
-        final_url   = req.url
-        soup        = BeautifulSoup(req.text)
-        title       = soup.title.string
+        final_url = req.url
+        soup = BeautifulSoup(req.text)
+        title = soup.title.string
         description = soup.findAll('meta',
-            attrs={'name':re.compile("^description$", re.I)})[0].get('content')
+                                   attrs={'name': re.compile("^description$", re.I)})[0].get('content')
     else:
         return error_connect
 
@@ -94,7 +84,8 @@ def get_url_informations(url):
         'url': final_url,
         'title': title,
         'description': description,
-        }
+    }
+
 
 def exist_url(url):
     """Check url exist"""

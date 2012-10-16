@@ -1,8 +1,11 @@
 Django==1.4.1
 South==0.7.6
 Markdown==2.2.0
+-e git+git://github.com/vinyll/django-imagefit.git#egg=django-imagefit
 beautifulsoup4==4.1.3
 dj-database-url==0.2.1
+django-gravatar==0.1.0
+django-registration==0.8
 gunicorn==0.14.6
 psycopg2==2.4.5
 requests==0.14.0

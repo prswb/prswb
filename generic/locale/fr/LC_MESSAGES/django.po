@@ -1,0 +1,199 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-10-14 23:52+0200\n"
+"PO-Revision-Date: 2012-10-14 23:52+0100\n"
+"Last-Translator: Nicolas Perriault <nicolas@perriault.net>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 1.5.4\n"
+
+msgid "Contribute to <span>website evolution</span>"
+msgstr "Contribuer à <span>l'évolution des sites</span>"
+
+msgid "the Web, better."
+msgstr "le Web, en mieux."
+
+msgid "UXperiment, le wat?"
+msgstr "UXperiment, c'est quoi ?"
+
+msgid ""
+"This original project intends to let users discuss and share their "
+"experience about websites"
+msgstr ""
+"Ce projet original a pour vocation de laisser la parole aux utilisateurs "
+"afin d'échanger autour de l'expérience utilisateur des sites que vous "
+"utilisez"
+
+msgid "Suggest a website"
+msgstr "Proposer un site"
+
+msgid ""
+"Once registered, submit a website and tell the world how you've experienced "
+"it, and how it could be enhanced."
+msgstr ""
+"Une fois inscrit, indiquez le site que vous souhaitez proposer et ce que "
+"vous en pensez."
+
+msgid "Other users then may engage a discussion about it."
+msgstr ""
+"Il sera ensuite directement publié et les autres utilisateurs pourront "
+"donner leur avis."
+
+msgid "Help to make it better!"
+msgstr "Contribuer à son évolution"
+
+msgid ""
+"Search for already reviewed websites, add your comments & experience, "
+"suggest enhancements and report problems."
+msgstr ""
+"Une fois inscrit, il vous suffit de sélectionner le site sur lequel vous "
+"souhaitez faire part d’un avis, d’une suggestion d'amélioration ou d’un "
+"problème."
+
+msgid "Ok."
+msgstr "Ok."
+
+msgid "How does it work?"
+msgstr "Comment ça marche ?"
+
+msgid "Submit your site."
+msgstr "Proposez votre site."
+
+msgid "We'll take care of it"
+msgstr "nous serons doux"
+
+msgid "Relax."
+msgstr "Détendez-vous"
+
+msgid "zombo.com"
+msgstr "mangerbouger.fr"
+
+msgid "Get feedback."
+msgstr "Écoutez les remarques."
+
+msgid "honest, always"
+msgstr "pertinentes, toujours"
+
+msgid "Become powerful"
+msgstr "Devenez Powerful"
+
+msgid "world is yours"
+msgstr "le monde est à vous"
+
+msgid "Hello,"
+msgstr "Bonjour,"
+
+msgid "Log out"
+msgstr "Déconnexion"
+
+msgid "Register"
+msgstr "Inscription"
+
+msgid "Log in"
+msgstr "Connexion"
+
+#, fuzzy
+msgid "Suggested websites"
+msgstr "Sites proposés"
+
+msgid "Contact"
+msgstr "Contact"
+
+msgid "No content yet."
+msgstr "Aucun contenu (pour le moment)."
+
+msgid "Legal"
+msgstr "Mentions légales"
+
+msgid "Account successfully activated"
+msgstr "Votre compte a été activé"
+
+msgid "Account activation failed"
+msgstr "L'activation du compte a échoué"
+
+msgid "Congratulations!"
+msgstr "Félicitations !"
+
+msgid "Your registration being complete, you can now"
+msgstr "Votre inscription étant finalisée, vous pouvez maintenant"
+
+msgid "log in"
+msgstr "vous connecter"
+
+msgid "Hey,"
+msgstr "Bonjour,"
+
+msgid "Thanks for registering with UXperiment."
+msgstr "Merci de votre inscription sur UXperiment."
+
+msgid "Please click the link below to activate your account:"
+msgstr "Veuillez cliquer sur le lien ci-dessous pour activer votre compte :"
+
+#, python-format
+msgid "Note: this link will expires in %(expiration_days)s days."
+msgstr "Note : ce lien expirera dans %(expiration_days)s jours."
+
+msgid "Thank you,"
+msgstr "Merci,"
+
+msgid "The UXperiment Team"
+msgstr "L'équipe UXperiment"
+
+msgid "Your UXperiment membership"
+msgstr "Votre inscription sur UXperiment"
+
+msgid "Forgot password"
+msgstr "J'ai oublié mon mot de passe"
+
+msgid "Reset it"
+msgstr "Réinitialisez-le"
+
+msgid "Not member"
+msgstr "Non-membre"
+
+msgid "You've been succesfully logged out."
+msgstr "Vous avez été déconnecté."
+
+msgid "Password change"
+msgstr "Changement de mot de passe"
+
+msgid "Password changed"
+msgstr "Le mot de passe a été mis à jour"
+
+msgid "Submit"
+msgstr "Envoyer"
+
+msgid "Password reset"
+msgstr "Réinitialisation du mot de passe"
+
+msgid "Password reset successfully"
+msgstr "Le mot de passe a été réinitialisé"
+
+msgid "Password reset failed"
+msgstr "La réinitialisation du mot de passe a échoué"
+
+msgid "Email with password reset instructions has been sent."
+msgstr ""
+"Un email contenant les instructions de réinitialisation vous a été envoyé."
+
+#, python-format
+msgid "Reset password at %(site_name)s"
+msgstr "Réinitialisation de votre mot de passe %(site_name)s"
+
+msgid "Registration"
+msgstr "Inscription"
+
+msgid "You are now registered. Activation email sent."
+msgstr ""
+"Nous avons bien reçu votre demande d'inscription. Une email d'activation "
+"vient de vous être envoyé."

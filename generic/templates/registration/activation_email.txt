@@ -1,0 +1,17 @@
+{% load i18n %}
+{% load url from future %}
+
+{% trans "Hey," %}
+
+{% trans "Thanks for registering with UXperiment." %}
+
+{% trans "Please click the link below to activate your account:" %}
+http://{{ site }}{% url 'registration_activate' activation_key=activation_key %}
+
+{% blocktrans %}Note: this link will expires in {{ expiration_days }} days.{% endblocktrans %}
+
+{% trans "Thank you," %}
+
+--
+{% trans "The UXperiment Team" %}
+http://{{ site }}
