@@ -32,7 +32,7 @@ class MarkdownPageTest(TestCase):
         if os.path.isfile(test_filepath):
             os.remove(test_filepath)
         # if the page doesn't exist, we should have a 404
-        response = self.client.get('/en/pages/test-page/')
+        response = self.client.get('/fr/pages/test-page/')
         self.assertEqual(response.status_code, 404)
 
         # i18n mardown file
@@ -40,13 +40,13 @@ class MarkdownPageTest(TestCase):
             markdown_file.write("# This is a test for all languages")
 
         # check the HTML dynamic rendering
-        response = self.client.get('/en/pages/test-page/')
+        response = self.client.get('/fr/pages/test-page/')
         self.assertContains(response, "<h1>This is a test for all languages</h1>")
 
         os.remove(test_filepath)
 
         # i18n pages
-        for lang in ('en', 'fr',):
+        for lang in [lng[0] for lng in settings.LANGUAGES]:
             # preliminary checks
             test_filepath = os.path.join(settings.MARKDOWN_DIR, lang,
                 'test-page-%s.md' % lang)
