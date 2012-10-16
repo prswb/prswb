@@ -39,10 +39,10 @@ h3 {
   font-size: 1em; }
 
 a {
-  color: #29abe2;
+  color: #4d4d4d;
   text-decoration: underline; }
   a:hover {
-    color: #000077; }
+    color: #29abe2; }
 
 nav {
   font-size: 1em; }
@@ -244,3 +244,8 @@ nav a {
   padding: 0 0 75px;
   background: #f2f2f2;
   border-top: 1px solid #e6e6e6; }
+
+.link-form {
+  margin: 20px 0 0 153px; }
+  .link-form + .link-form {
+    margin-top: 0px; }

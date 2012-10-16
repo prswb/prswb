@@ -50,9 +50,9 @@ h3 {
     font-size: 1em;
 }
 a {
-	color: $links;
+	color: $body-color;
     text-decoration: underline;
-	&:hover { color: $links-hover;}
+	&:hover { color: $links;}
 }
 
 nav {
