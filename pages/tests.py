@@ -27,6 +27,25 @@ class MarkdownPageTest(TestCase):
         Tests that you can create a page via a newly created markdown
         file and still raise a 404 on deletion.
         """
+        # root pages
+        test_filepath = os.path.join(settings.MARKDOWN_DIR, 'test-page.md')
+        if os.path.isfile(test_filepath):
+            os.remove(test_filepath)
+        # if the page doesn't exist, we should have a 404
+        response = self.client.get('/en/pages/test-page/')
+        self.assertEqual(response.status_code, 404)
+
+        # i18n mardown file
+        with open(test_filepath, 'w') as markdown_file:
+            markdown_file.write("# This is a test for all languages")
+
+        # check the HTML dynamic rendering
+        response = self.client.get('/en/pages/test-page/')
+        self.assertContains(response, "<h1>This is a test for all languages</h1>")
+
+        os.remove(test_filepath)
+
+        # i18n pages
         for lang in ('en', 'fr',):
             # preliminary checks
             test_filepath = os.path.join(settings.MARKDOWN_DIR, lang,
