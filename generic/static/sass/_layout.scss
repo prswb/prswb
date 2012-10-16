@@ -31,7 +31,8 @@ footer {
 	margin: 0 50px 70px 0;
 	width: 270px;
 	img {
-		padding: 10px;	
+		padding: 10px;
+		margin: 0 0 10px;	
 		border: 1px solid #e6e6e6;	
 	}
 	&:last-child {
@@ -55,12 +56,12 @@ footer {
 	h3 {
 		margin: 0;
 		font-family: $special-font-stack;
-		font-size: 18px;
+		font-size: 17px;
 		line-height: 20px;
 		span {
 			display: block;
-			font-family: $special-font-stack-light;
-			font-size: 16px;
+			font-family: $default-font-stack;
+			font-size: 14px;
 			color: #999;
 		}
 	}

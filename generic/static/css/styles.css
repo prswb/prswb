@@ -84,6 +84,7 @@ footer {
   width: 270px; }
   .col3 img {
     padding: 10px;
+    margin: 0 0 10px;
     border: 1px solid #e6e6e6; }
   .col3:last-child {
     margin: 0; }
@@ -102,12 +103,12 @@ footer {
   .col4 h3 {
     margin: 0;
     font-family: "museo_700regular", Arial, sans-serif;
-    font-size: 18px;
+    font-size: 17px;
     line-height: 20px; }
     .col4 h3 span {
       display: block;
-      font-family: "museo_300regular", Arial, sans-serif;
-      font-size: 16px;
+      font-family: "Open Sans", Arial, sans-serif;
+      font-size: 14px;
       color: #999; }
 
 input, textarea {
