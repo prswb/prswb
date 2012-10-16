@@ -179,7 +179,7 @@ LOGGING = {
     }
 }
 
-MARKDOWN_DIR = os.path.join(ROOT_DIR, 'markdown')
+MARKDOWN_DIR = os.path.abspath(os.path.join(ROOT_DIR, '..', 'pages', 'markdown'))
 
 PASSWORD_HASHERS = (
     'django.contrib.auth.hashers.PBKDF2PasswordHasher',

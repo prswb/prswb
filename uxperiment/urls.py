@@ -41,14 +41,14 @@ urlpatterns = i18n_patterns('',
 
     # registration, accounts
     url(r'^compte/', include(registration_urls)),
+
+    # pages
+    url(r'^pages/(?P<slug>[-\w\d]+)/$', pages_views.markdown_page,
+        name='markdown_page'),
 )
 
 # non i18 urls
 urlpatterns += patterns('',
-    # pages
-    url(r'^pages/(?P<slug>[-\w\d]+)/$', pages_views.markdown_page,
-        name='markdown_page'),
-
     # imagefit
     url(r'^imagefit/', include(imagefit_urls)),
 
