@@ -18,9 +18,9 @@
 	background: $secondary-color;
 	color: $color-for-bg;
 	font-weight: 600;
-	text-decoration: none; 
 	a {
 		color: $links-with-bg;
+		text-decoration: none; 
 	}
 }
 nav {
@@ -28,18 +28,29 @@ nav {
 		margin: 0 15px 0 0;
 		&:last-child {
 			margin: 0;
+			&:after {
+				content: "";
+			}
+		}
+		&:after {
+			content:"|";
 		}
 	}
 	a{
+		padding: 0 15px 0 0;
 		color: $body-color;
 		text-transform: uppercase;
 		text-decoration: none;
+		font-weight: 600;
+		&:hover {
+			color: $secondary-color;
+		}
 	}
 }
 .home-illustration {
 	height: 430px;
 	background: url(../img/home-illustration.jpg) center bottom no-repeat,
-				url(../img/bg-home-illustration.jpg) 0 0 repeat-x;
+	url(../img/bg-home-illustration.jpg) 0 0 repeat-x;
 }
 .illustration-title {
 	margin: 0;
