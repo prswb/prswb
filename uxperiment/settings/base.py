@@ -31,7 +31,7 @@ LANGUAGE_CODE = 'fr-fr'
 
 gettext = lambda s: s
 LANGUAGES = (
-    ('en', gettext('English')),
+    #('en', gettext('English')),  # to be reintroduced when we "feel" it
     ('fr', gettext('French')),
 )
 
