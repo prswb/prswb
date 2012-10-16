@@ -7,7 +7,7 @@ from django.http import HttpResponse, Http404
 from django.utils.translation import ugettext as _
 from django.contrib.auth.decorators import login_required
 
-from websites.models import get_url_informations
+from websites.utils import get_url_informations
 from websites.forms import SuggestForm
 from models import Website
 from uxperiment.utils import send_message
@@ -66,4 +66,4 @@ def informations(request):
         return HttpResponse(json.dumps(infos),
             content_type="application/json", status=status)
     else:
-        raise Http404
+        raise Http404("This view should be called in ajax")
