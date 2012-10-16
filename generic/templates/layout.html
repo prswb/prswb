@@ -34,7 +34,7 @@
         {% trans "Hello," %} <a href="#to-profile">{{ user.username }}</a> /
         <a href="{% url 'auth_logout' %}">{% trans "Log out" %}</a>
       {% else %}
-        <a href="{% url 'registration_register' %}">{% trans "Register" %}</a> /
+       >  <a href="{% url 'registration_register' %}"> {% trans "Register" %}</a> /
         <a href="{% url 'auth_login' %}">{% trans "Log in" %}</a>
       {% endif %}
     </div>
@@ -42,13 +42,10 @@
     <nav class="fr">
       <ul>
         <li class="fl"><a href="{% url 'websites_index' %}">{% trans "Suggested websites" %}</a></li>
-        <li class="fl">|</li>
         <li class="fl"><a href="{% url 'suggest_website' %}">{% trans "Suggest a website" %}</a></li>
-        <li class="fl">|</li>
         <li class="fl"><a href="{% url 'contact' %}">{% trans "Contact" %}</a></li>
         {% get_language_info_list for LANGUAGES as languages %}
         {% for language in languages %}
-          <li class="fl">|</li>
           <li class="fl">
             {% if LANGUAGE_CODE == language.code %}
               {{ language.name_local|upper }}
@@ -71,6 +68,9 @@
     <img src="{{ STATIC_URL }}img/logo-grey.png" alt="Logo UXperiment footer" class="fl">
    <nav class="fr">
      <ul>
+     <li class="fl"><a href="{% url 'websites_index' %}">{% trans "Suggested websites" %}</a></li>
+     <li class="fl"><a href="{% url 'suggest_website' %}">{% trans "Suggest a website" %}</a></li>
+     <li class="fl"><a href="{% url 'contact' %}">{% trans "Contact" %}</a></li>
       <li class="fl"><a href="/pages/mentions-legales">{% trans "Legal" %}</a></li>
      </ul>
    </nav>

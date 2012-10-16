@@ -50,6 +50,9 @@ nav {
 input {
   font-size: 0.938em; }
 
+.chapo {
+  font-style: italic; }
+
 /* Choose a grid width, the number of columns and the margin between columns. The result of the following equation has to be an integer, not a fraction: (width - (columns - 1) * col_margin) / columns = N */
 /* total with of page */
 .container {
@@ -168,19 +171,27 @@ ul {
   padding: 5px 15px;
   background: #29abe2;
   color: white;
-  font-weight: 600;
-  text-decoration: none; }
+  font-weight: 600; }
   .btn-subscribe a {
-    color: white; }
+    color: white;
+    text-decoration: none; }
 
 nav li {
   margin: 0 15px 0 0; }
   nav li:last-child {
     margin: 0; }
+    nav li:last-child:after {
+      content: ""; }
+  nav li:after {
+    content: "|"; }
 nav a {
+  padding: 0 15px 0 0;
   color: #4d4d4d;
   text-transform: uppercase;
-  text-decoration: none; }
+  text-decoration: none;
+  font-weight: 600; }
+  nav a:hover {
+    color: #29abe2; }
 
 .home-illustration {
   height: 430px;

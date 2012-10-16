@@ -1,10 +1,15 @@
 {% extends "layout.html" %}
 {% load i18n %}
 {% load url from future %}
-
+{% block meta_title %}Contact{% endblock %}
 {% block content %}
     <section class="clearfix container main-container">
         <h1>{% trans "Contact" %}</h1>
+        <p class="chapo">
+        UXperiment est un site qui se veut collaboratif. <br/>
+        Nous sommes à l'écoute de toutes remarques qui puissent nous faire avancer. <br/>
+        N'hésitez pas à nous contacter, même pour nous dire 3 mots ;) 
+        </p>
         <form method="post" action="{% url "contact" %}">
             {% csrf_token %}
             {{ form.subject.errors }}
