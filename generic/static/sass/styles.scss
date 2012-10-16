@@ -82,3 +82,9 @@ nav {
 	background: #f2f2f2;
 	border-top: 1px solid #e6e6e6;
 }
+.link-form {
+	margin: 20px 0 0 153px;
+	& + .link-form{
+		margin-top: 0px;
+	}
+}
