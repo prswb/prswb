@@ -13,10 +13,9 @@ from models import Website
 from uxperiment.utils import send_message
 
 
-def list(request):
-    websites = Website.objects.all()
-    return render(request, 'websites/list.html', {
-        'websites': websites,
+def index(request):
+    return render(request, 'websites/index.html', {
+        'websites': Website.objects.all(),
     })
 
 
@@ -26,23 +25,24 @@ def suggest(request):
     Suggest form
     Display and proceed suggest a website form submission
     """
-    if request.method == 'POST':
-        form = SuggestForm(request.POST, request.FILES)
-        if form.is_valid():
-            website = form.save(commit=False)
-            website.submitter = request.user
-            website.save()
-            send_message('suggest', {
-                'website': website.url,
-                'username': request.user.username,
-                'sender': request.user.email,
-            })
-            return redirect('confirm_suggest_website')
-    else:
-        form = SuggestForm(initial=dict(url='http://'))
-    return render(request, 'websites/suggest.html', {
-        'form': form,
-    })
+    form = SuggestForm(
+        request.POST or None,
+        request.FILES or None,
+        initial=dict(url='http://')
+    )
+
+    if form.is_valid():
+        website = form.save(commit=False)
+        website.submitter = request.user
+        website.save()
+        send_message('suggest', {
+            'website': website.url,
+            'username': request.user.username,
+            'sender': request.user.email
+        })
+        return redirect('confirm_suggest_website')
+
+    return render(request, 'websites/suggest.html', {'form': form})
 
 
 def confirm_suggest(request):
@@ -54,9 +54,11 @@ def informations(request):
     """ Get informations about a website """
     if request.is_ajax():
         success = False
+        status = 400
         infos = {'error': _(u'Invalid request')}
-        if 'GET' == request.method:
-            success, infos = get_url_informations(request.GET['url'])
+        url = request.GET.get('url', False)
+        if url:
+            success, infos = get_url_informations(url)
 
             if success:
                 status = 200
