@@ -1,4 +1,4 @@
-# UXpermiment <sup>[![Build Status](https://secure.travis-ci.org/prswb/prswb.png?branch=master)](http://travis-ci.org/prswb/prswb)</sup>
+# UXperiment <sup>[![Build Status](https://secure.travis-ci.org/prswb/prswb.png?branch=master)](http://travis-ci.org/prswb/prswb)</sup>
 
 **Code related to the «[Scrum vu des petites tranchées](http://www.paris-web.fr/2012/conferences/scrum-vue-des-petites-tranchees.php)» talk to be given at [Paris-Web 2012](http://www.paris-web.fr/2012/).**
 
