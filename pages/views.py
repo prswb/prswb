@@ -1,13 +1,18 @@
 # coding: utf-8
-import os.path
+
 import codecs
 import markdown
-from django.shortcuts import render, redirect
+
+from django.contrib import messages
 from django.http import Http404
+from django.shortcuts import render, redirect
+from django.utils.translation import get_language, ugettext as _
 from django.views.decorators.csrf import csrf_protect
-from pages.forms import ContactForm
-from django.conf import settings
+
 from uxperiment.utils import send_message
+
+from pages.forms import ContactForm
+from utils import resolve_markdown_path
 
 
 def dashboard(request):
@@ -34,18 +39,18 @@ def confirm_contact(request):
 
 def markdown_page(request, slug):
     """
-    Retrieves the file in the MARKDOWN_DIR from `slug`.md's filename.
-
-    This markdown file is converted to html and rendered.
+    Computes markdown file path, converts its contents to html and renders it.
     Otherwise, if the file doesn't exist, the view returns a 404.
     """
-    filename = os.path.join(settings.MARKDOWN_DIR, '%s.md' % slug)
-    if os.path.isfile(filename):
-        try:
-            input_file = codecs.open(filename, mode="r", encoding="utf-8")
-            text = input_file.read()
-            html = markdown.markdown(text)
-            return render(request, 'pages/markdown.html', {'html': html})
-        except:
-            pass
-    raise Http404
+    filename = resolve_markdown_path(slug, get_language())
+    if not filename:
+        raise Http404
+    try:
+        input_file = codecs.open(filename, mode="r", encoding="utf-8")
+        text = input_file.read()
+    except IOError:
+        # TODO: Shouldn't we log these kinds of errors?
+        messages.error(request, _(u"Unable to render page, sorry."))
+    return render(request, 'pages/markdown.html', {
+        'html': markdown.markdown(text),
+    })

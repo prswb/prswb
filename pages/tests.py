@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
-from os import path, remove
+
+import os
 
 from django.test import TestCase
 from django.conf import settings
@@ -13,11 +14,11 @@ class MarkdownPageTest(TestCase):
         Tests that you can reach a page if the markdown file exists.
         """
         # if the page doesn't exist, we should have a 404
-        response = self.client.get('/pages/this-page-doesnt-exist/')
+        response = self.client.get('/fr/pages/this-page-doesnt-exist/')
         self.assertEqual(response.status_code, 404)
 
         # if the page exists, we should have rendered HTML
-        response = self.client.get('/pages/mentions-legales/')
+        response = self.client.get('/fr/pages/mentions-legales/')
         self.assertTemplateUsed(response, 'pages/markdown.html')
         self.assertContains(response, "<h1> Mentions légales</h1>")
 
@@ -26,25 +27,31 @@ class MarkdownPageTest(TestCase):
         Tests that you can create a page via a newly created markdown
         file and still raise a 404 on deletion.
         """
-        # if the page doesn't exist, we should have a 404
-        response = self.client.get('/pages/test-page/')
-        self.assertEqual(response.status_code, 404)
+        for lang in ('en', 'fr',):
+            # preliminary checks
+            test_filepath = os.path.join(settings.MARKDOWN_DIR, lang,
+                'test-page-%s.md' % lang)
+            if os.path.isfile(test_filepath):
+                os.remove(test_filepath)
 
-        # let's create the page
-        page_filepath = path.join(settings.MARKDOWN_DIR, 'test-page.md')
-        with open(page_filepath, 'w') as markdown_file:
-            markdown_file.write("# This is a test")
+            # if the page doesn't exist, we should have a 404
+            response = self.client.get('/%s/pages/test-page-%s/' % (lang, lang,))
+            self.assertEqual(response.status_code, 404)
 
-        # check the HTML dynamic rendering
-        response = self.client.get('/pages/test-page/')
-        self.assertContains(response, "<h1>This is a test</h1>")
+            # i18n mardown file
+            with open(test_filepath, 'w') as markdown_file:
+                markdown_file.write("# This is a test in %s" % lang)
 
-        # finally remove the markdown file newly created
-        remove(page_filepath)
+            # check the HTML dynamic rendering
+            response = self.client.get('/%s/pages/test-page-%s/' % (lang, lang,))
+            self.assertContains(response, "<h1>This is a test in %s</h1>" % lang)
 
-        # if the file has been removed, we should get back to a 404
-        response = self.client.get('/pages/test-page/')
-        self.assertEqual(response.status_code, 404)
+            # remove the test file
+            os.remove(test_filepath)
+
+            # if the file has been removed, we should get back to a 404
+            response = self.client.get('/%s/pages/test-page-%s/' % (lang, lang,))
+            self.assertEqual(response.status_code, 404)
 
 
 class ContactPageTest(TestCase):
