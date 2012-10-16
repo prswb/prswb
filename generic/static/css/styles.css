@@ -113,23 +113,44 @@ footer {
 
 input, textarea {
   padding: 4px;
+  display: inline-block;
+  width: 560px;
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   border-radius: 0;
-  border: 1px solid #e6e6e6; }
+  border: 1px solid #e6e6e6;
+  vertical-align: top; }
+  input:invalid, textarea:invalid {
+    border: 2px solid #ff0000; }
+
+input:focus:required,
+textarea:focus:required:invalid {
+  border: 1px solid #f00; }
+
+label {
+  display: inline-block;
+  width: 150px; }
 
 input[type="submit"] {
   padding: 5px 10px;
+  margin: 0 0 0 153px;
   background: #29abe2;
   color: #fff;
-  border: none; }
+  border: none;
+  width: auto; }
+
+input[type="file"] {
+  width: 430px; }
 
 .errorlist {
-  float: right;
-  margin: 0 280px 0 0; }
+  margin: 0 0 0 153px;
+  padding: 0; }
   .errorlist li {
     list-style-type: none;
-    color: #ed1e79; }
+    color: #c1272d; }
+
+form p {
+  margin: 0 0 10px; }
 
 /*Floats*/
 .fl {
@@ -176,6 +197,10 @@ ul {
   .btn-subscribe a {
     color: white;
     text-decoration: none; }
+    .btn-subscribe a:first-child {
+      padding: 0 10px 0 0; }
+    .btn-subscribe a:last-child {
+      padding: 0 0 0 10px; }
 
 nav li {
   margin: 0 15px 0 0; }
@@ -183,6 +208,8 @@ nav li {
     margin: 0; }
     nav li:last-child:after {
       content: ""; }
+    nav li:last-child a {
+      padding: 0; }
   nav li:after {
     content: "|"; }
 nav a {
