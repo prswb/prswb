@@ -1,4 +1,4 @@
-# UXpermiment <sup>[![Build Status](https://secure.travis-ci.org/prswb/prswb.png?branch=master)](http://travis-ci.org/prswb/prswb)</sup>
+# UXperiment <sup>[![Build Status](https://secure.travis-ci.org/prswb/prswb.png?branch=master)](http://travis-ci.org/prswb/prswb)</sup>
 
 **Code related to the «[Scrum vu des petites tranchées](http://www.paris-web.fr/2012/conferences/scrum-vue-des-petites-tranchees.php)» talk to be given at [Paris-Web 2012](http://www.paris-web.fr/2012/).**
 
@@ -39,6 +39,17 @@ Quit the server with CONTROL-C.
 ```
 
 Head to `http://127.0.0.1:8000/`, profit.
+
+### Updating the codebase
+
+After each `git pull`, you have to run the following commands:
+
+```
+$ pip install -r requirements-dev.txt
+$ python manage.py syncdb
+$ python manage.py migrate
+$ python manage.py collectstatic
+```
 
 Settings management
 -------------------
@@ -98,15 +109,24 @@ $ git push heroku master
 
 ### Post push deployment
 
-After a push, Heroku will load the packages defined in the `requirements.txt` file.
-This file also contains packages for `postgres` and `gunicorn`.
+After a push, Heroku will load the packages defined in the `requirements.txt`
+file. At the end of the process, the `Procfile` will be used by Heroku to start
+the server.
 
-At the end of the process, the `Procfile` will be used by Heroku to start the server.
-
-To tell Heroku to use the staging settings module:
+Basically the `Procfile` will run these commands:
 
 ```
-$ heroku config:set DJANGO_SETTINGS_MODULE=uxperiment.settings.staging
+$ python manage.py migrate
+$ python manage.py collectstatic --noinput
+$ python manage.py run_gunicorn -b 0.0.0.0:$PORT
+```
+
+### Environment & settings
+
+To tell Heroku to use the `staging` environment:
+
+```
+$ heroku config:set UXPERIMENT_ENV=staging
 ```
 
 The `staging` settings module uses environment variables to configure the platform;
@@ -116,13 +136,21 @@ to set them you have to use the `heroku config:add` command:
 $ heroku config:add VARIABLE=VALUE
 ```
 
-To run South migrations:
+Here are some of the settings required for the staging to work properly:
+
+* `EMAIL_RECIPIENT`: The email address to receive notification emails sent from the platform
+* `EMAIL_HOST_USER`: The email user account name to send the email from
+* `EMAIL_HOST_PASSWORD`: The email user account password
+
+### Heroku commands
+
+You can always run django commands using the `heroku run` command, eg:
 
 ```
 $ heroku run 'python manage.py migrate'
 ```
 
-To tail the logs:
+To tail the server logs:
 
 ```
 $ heroku logs --tail
