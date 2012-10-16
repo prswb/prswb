@@ -40,6 +40,17 @@ Quit the server with CONTROL-C.
 
 Head to `http://127.0.0.1:8000/`, profit.
 
+### Updating the codebase
+
+After each `git pull`, you have to run the following commands:
+
+```
+$ pip install -r requirements-dev.txt
+$ python manage.py syncdb
+$ python manage.py migrate
+$ python manage.py collectstatic
+```
+
 Settings management
 -------------------
 
@@ -66,14 +77,6 @@ If you intend to work always with a given environment within the project virtual
 ```
 $ echo 'export UXPERIMENT_ENV=dev' >> .env/bin/postactivate
 $ echo 'export unset UXPERIMENT_ENV' >> .env/bin/postdeactivate
-```
-
-After each `git pull`, you have to run the following commands:
-
-```
-$ python manage.py syncdb
-$ python manage.py migrate
-$ python manage.py collectstatic
 ```
 
 Deploying on Heroku
