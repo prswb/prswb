@@ -2,10 +2,11 @@
 
 import json
 
-from django.shortcuts import render, redirect
-from django.http import HttpResponse, Http404
-from django.utils.translation import ugettext as _
+from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.http import HttpResponse, Http404
+from django.shortcuts import render, redirect
+from django.utils.translation import ugettext as _
 
 from websites.utils import get_url_informations
 from websites.forms import SuggestForm
@@ -14,6 +15,8 @@ from uxperiment.utils import send_message
 
 
 def index(request):
+    """ Websites index.
+    """
     return render(request, 'websites/index.html', {
         'websites': Website.objects.all(),
     })
@@ -21,9 +24,8 @@ def index(request):
 
 @login_required
 def suggest(request):
-    """
-    Suggest form
-    Display and proceed suggest a website form submission
+    """ Suggest form
+        Display and proceed suggest a website form submission
     """
     form = SuggestForm(
         request.POST or None,
@@ -40,32 +42,23 @@ def suggest(request):
             'username': request.user.username,
             'sender': request.user.email
         })
-        return redirect('confirm_suggest_website')
+        messages.success(request, _('Thanks for your proposition.'))
+        return redirect('websites_index')
 
     return render(request, 'websites/suggest.html', {'form': form})
 
 
-def confirm_suggest(request):
-    """ Suggest form confirmation """
-    return render(request, 'websites/confirm_suggest.html')
-
-
 def informations(request):
-    """ Get informations about a website """
-    if request.is_ajax():
-        success = False
-        status = 400
-        infos = {'error': _(u'Invalid request')}
-        url = request.GET.get('url', False)
-        if url:
-            success, infos = get_url_informations(url)
-
-            if success:
-                status = 200
-            else:
-                status = 409
-
-        return HttpResponse(json.dumps(infos),
-            content_type="application/json", status=status)
-    else:
+    """ Get informations about a website.
+    """
+    if not request.is_ajax():
         raise Http404("This view should be called in ajax")
+    success = False
+    status = 400
+    infos = {'error': _(u'Invalid request')}
+    url = request.GET.get('url', False)
+    if url:
+        success, infos = get_url_informations(url)
+        status = 200 if success else 409
+    return HttpResponse(json.dumps(infos),
+        content_type="application/json", status=status)

@@ -34,8 +34,6 @@ urlpatterns = i18n_patterns('',
         name='websites_index'),
     url(r'^proposer-un-site/$', websites_views.suggest,
         name='suggest_website'),
-    url(r'^proposer-un-site/merci/$', websites_views.confirm_suggest,
-        name='confirm_suggest_website'),
     url(r'^informations-sur-un-site/$', websites_views.informations,
         name='informations_website'),
 

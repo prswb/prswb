@@ -125,3 +125,28 @@ ul.websites {
 		}
 	}
 }
+
+ul.messages {
+	padding: 0 !important;
+	margin: 0 !important;
+	list-style-type: none;
+	.info, .error, .success, .warning {
+		padding: 8px 15px;
+	}
+	.info {
+		background: #F2F7FF;
+		color: #84B0F6;
+	}
+	.error {
+		background: #FCE2E2;
+		color: #F66;
+	}
+	.success {
+		background: #F2FEF2;
+		color: #7FBA7F;
+	}
+	.warning {
+		background: #FFF0D2;
+		color: #F93;
+	}
+}

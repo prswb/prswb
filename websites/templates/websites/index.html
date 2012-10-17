@@ -5,10 +5,9 @@
 {% block meta_description %}Découvrez tous les sites déjà proposés et contribuez aux tests collaboratifs sur ces sites en partageant votre expérience.{% endblock %}
 
 {% block content %}
-    <section class="clearfix container main-container">
-        <h1>{% trans "Suggested websites" %}</h1>
-        <p>Proposez un site à la communauté afin de partager votre expérience sur ce site</p>
-        <p>Comment? Il suffit de nous indiquer ce que vous en pensez à l'aide d'un commentaire, de signaler les problèmes que vous avez soulevez et/ ou d'émettre des propositions de fonctionnalités ou d'amélioration que vous suggérez pour améliorer l'expérience utilisateur du site.</p>
+    <h1>{% trans "Suggested websites" %}</h1>
+    <p>Proposez un site à la communauté afin de partager votre expérience sur ce site</p>
+    <p>Comment? Il suffit de nous indiquer ce que vous en pensez à l'aide d'un commentaire, de signaler les problèmes que vous avez soulevez et/ ou d'émettre des propositions de fonctionnalités ou d'amélioration que vous suggérez pour améliorer l'expérience utilisateur du site.</p>
     {% if websites %}
         <ul class="websites">
             {% for website in websites %}
@@ -20,13 +19,10 @@
                         {% trans "by" %} <img src="{% gravatar_for_email request.user.email 16 %}" alt=""> {{ website.submitter.username }}
                     {% endif %}
                 </p>
-                {% if website.picture %}
-                    <img src="{{ website.picture.url|resize:"250x160" }}" alt="{{ website.title }} ({{ website.url }})" />
-                {% else %}
+                <a href="{{ website.url }}" taget="_blank">
                     <img src="http://api.webthumbnail.org/?width=250&amp;height=160&amp;format=png&amp;screen=1024&amp;url={{ website.url }}" alt="{{ website.title }}">
-                {% endif %}
-
-                <a href="{{ website.url }}" taget="_blank">{{ website.url }}</a>
+                    <br>{{ website.url }}
+                </a>
             </li>
             {% endfor %}
         </ul>
@@ -34,5 +30,4 @@
         <p>{% trans "No suggested website yet." %}</p>
         <p><a href="{% url suggest_website %}">{% trans "Suggest a website" %}</a></p>
     {% endif %}
-    </section>
 {% endblock %}

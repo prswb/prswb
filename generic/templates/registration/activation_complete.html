@@ -4,11 +4,9 @@
 {% load url from future %}
 
 {% block content %}
-<section class="clearfix container main-container">
-	<h2>{% trans "Congratulations!" %}</h2>
-	<p>
-		{% trans "Your registration being complete, you can now" %}
-		<a href="{% url 'auth_login' %}">{% trans "log in" %}</a>.
-	</p>
-</section>
+    <h2>{% trans "Congratulations!" %}</h2>
+    <p>
+        {% trans "Your registration being complete, you can now" %}
+        <a href="{% url 'auth_login' %}">{% trans "log in" %}</a>.
+    </p>
 {% endblock %}

@@ -3,12 +3,10 @@
 {% load url from future %}
 
 {% block content %}
-<section class="clearfix container main-container">
     {% if account %}
         <p>{% trans "Account successfully activated" %}</p>
         <p><a href="{% url 'auth_login' %}">{% trans "Log in" %}</a></p>
     {% else %}
         <p>{% trans "Account activation failed" %}</p>
     {% endif %}
-    </section>
 {% endblock %}
