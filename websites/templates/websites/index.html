@@ -16,7 +16,7 @@
                 <p class="info">
                     {% trans "submitted on" %} {{ website.date|date:"d F Y" }}
                     {% if website.submitter %}
-                        {% trans "by" %} <img src="{% gravatar_for_email request.user.email 16 %}" alt=""> {{ website.submitter.username }}
+                        {% trans "by" %} <img src="{% gravatar_for_email website.submitter.email 16 %}" alt=""> {{ website.submitter.username }}
                     {% endif %}
                 </p>
                 <a href="{{ website.url }}" taget="_blank">
