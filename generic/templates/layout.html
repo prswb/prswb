@@ -22,7 +22,7 @@
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,800,300' rel='stylesheet' type='text/css'>
 
 </head>
-<body>
+<body class="{% block body_class %}{% endblock %}">
 <header class="clearfix">
   <div class="header-block container">
     <a href="{% url 'homepage' %}" id="logo" class="fl">
