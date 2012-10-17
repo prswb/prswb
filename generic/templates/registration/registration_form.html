@@ -4,14 +4,12 @@
 {% block meta_description %}Inscrivez-vous sur le site afin de participer à l'expérience d'UXperiment. Contribuez à l'évolution des sites en partageant votre expérience.{% endblock %}
 
 {% block content %}
-<section class="clearfix container main-container">
-	<h1>{% trans "Registration" %}</h1>
-	<p>Inscrivez-vous sur le site afin de participer à UXperiment</p>
-	<p>Contribuez à l'évolution des sites en partageant votre expérience</p>
-	<form method="post" action=".">
-		{% csrf_token %}
-		{{ form.as_p }}
-		<input type="submit" value="{% trans 'Submit' %}" />
-	</form>
-</section>
+    <h1>{% trans "Registration" %}</h1>
+    <p>Inscrivez-vous sur le site afin de participer à UXperiment</p>
+    <p>Contribuez à l'évolution des sites en partageant votre expérience</p>
+    <form method="post" action=".">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="{% trans 'Submit' %}" />
+    </form>
 {% endblock %}

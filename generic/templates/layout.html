@@ -10,16 +10,13 @@
   <meta name="description" content="{% block meta_description %}{% endblock %}" />
   <meta name="language" content="{% block meta_language %}fr{% endblock %}" />
   <meta name="robots" content="{{ meta.robots }}" />
-
-  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
   <link rel="shortcut icon" type="image/x-icon" href="{{ STATIC_URL }}img/favicon.ico"/>
   <link rel="icon" type="image/png" href="{{ STATIC_URL }}img/favicon.png"/>
-
   <link rel="stylesheet" href="{{ STATIC_URL }}css/normalize.css">
   <link rel="stylesheet" href="{{ STATIC_URL }}css/styles.css">
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,800,300' rel='stylesheet' type='text/css'>
-
 </head>
+
 <body class="{% block body_class %}{% endblock %}">
 <header class="clearfix">
   <div class="header-block container">
@@ -32,8 +29,8 @@
         {% trans "Hello," %} {{ user.username }} /
         <a href="{% url 'auth_logout' %}">{% trans "Log out" %}</a>
       {% else %}
-       >  <a href="{% url 'registration_register' %}"> {% trans "Register" %}</a> /
-        <a href="{% url 'auth_login' %}">{% trans "Log in" %}</a>
+        &gt; <a href="{% url 'registration_register' %}"> {% trans "Register" %}</a> /
+             <a href="{% url 'auth_login' %}">{% trans "Log in" %}</a>
       {% endif %}
     </div>
 
@@ -48,7 +45,16 @@
 </header>
 
 <section id="content" class="clearfix">
-  {% block content %}{% trans "No content yet." %}{% endblock %}
+  <section class="clearfix container main-container">
+    {% if messages %}
+    <ul class="messages">
+      {% for message in messages %}
+      <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+    {% block content %}{% trans "No content yet." %}{% endblock %}
+  </section>
 </section>
 
 <footer>
