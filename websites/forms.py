@@ -8,4 +8,4 @@ class SuggestForm(forms.ModelForm):
     """
     class Meta:
         model = Website
-        exclude = ('submitter','picture',)
+        exclude = ('picture', 'submitter',)
