@@ -6,8 +6,10 @@ DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
-    ('Lionel Chanson', 'lionel@soreia.com'),
     ('Mathieu Tricoire', 'mathieu.tricoire@gmail.com'),
+    ('David Larlet', 'david.larlet@scopyleft.fr'),
+    ('Nicolas Perriault', 'nicolas.perriault@scopyleft.fr'),
+    ('Vincent Agnano', 'vincent.agnano@scopyleft.fr'),
 )
 
 MANAGERS = ADMINS
