@@ -37,10 +37,11 @@ class MarkdownPageTest(TestCase):
 
         # i18n mardown file
         with open(test_filepath, 'w') as markdown_file:
-            markdown_file.write("# This is a test for all languages")
+            markdown_file.write("Test page title\n\n# This is a test for all languages")
 
         # check the HTML dynamic rendering
         response = self.client.get('/fr/pages/test-page/')
+        self.assertContains(response, "<title>UXperiment - Test page title</title>")
         self.assertContains(response, "<h1>This is a test for all languages</h1>")
 
         os.remove(test_filepath)
@@ -59,7 +60,8 @@ class MarkdownPageTest(TestCase):
 
             # i18n mardown file
             with open(test_filepath, 'w') as markdown_file:
-                markdown_file.write("# This is a test in %s" % lang)
+                markdown_file.write("Title in %(lang)s\n\n# This is a test in %(lang)s"
+                                    % dict(lang=lang))
 
             # check the HTML dynamic rendering
             response = self.client.get('/%s/pages/test-page-%s/' % (lang, lang,))

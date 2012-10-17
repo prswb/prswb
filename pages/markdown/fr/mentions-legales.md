@@ -1,3 +1,5 @@
+Mentions légales
+
 <h1> Mentions légales</h1>
 <h2> Hébergeur du site </h2>
 
@@ -25,7 +27,7 @@ Email : contact@uxperiment.fr</p>
 
 <p>UXperiment peut être amené à implanter un cookie dans l’ordinateur de l’utilisateur. Un cookie ne permet pas à UXperiment de l’identifier ; en revanche, il enregistre des informations relatives à la navigation de l’ordinateur de l’utilisateur sur le site www.uxperiment.fr (les pages que l’utilisateur a consultées, la date et l'heure de la consultation, etc.) que UXperiment pourra lire lors des visites ultérieures de l’utilisateur. La durée de conservation de ces informations dans l’ordinateur de l’utilisateur est de 1(un) an.
 UXperiment informe l’utilisateur qu’il peut s’opposer à l'enregistrement de "cookies" en configurant son navigateur de la manière suivante :</p> <br>
- 
+
 <p>Pour Mozilla firefox :
    Choisissez le menu "outil " puis "Options"
    Cliquez sur l'icône "vie privée"
@@ -98,7 +100,7 @@ UXperiment ne pourra être responsable pour quel que dommage que ce soit tant di
 UXperiment ne peut être tenu responsable des problèmes liés à la bonne consultation de ce site ainsi que les dégâts causés par virus, hacking, piratage ou toute utilisation malveillante du réseau Internet.
 
 Pour toute remarque sur le fonctionnement du site, vous pouvez envoyer un mail à contact@uxperiment.fr.</p>
- 
+
 <h2> Liens hypertextes</h2>
 
 <p>Les liens hypertextes mis en place dans le cadre du site www.uxperiment.fr en direction d'autres ressources présentes sur le réseau Internet ont fait l'objet d'une autorisation préalable, expresse et écrite.

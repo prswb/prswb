@@ -47,12 +47,13 @@ def markdown_page(request, slug):
         raise Http404
     try:
         input_file = codecs.open(filename, mode="r", encoding="utf-8")
-        text = input_file.read()
+        content = input_file.readlines()
     except IOError:
         # TODO: Shouldn't we log these kinds of errors?
         messages.error(request, _(u"Unable to render page, sorry."))
     finally:
         input_file.close()
     return render(request, 'pages/markdown.html', {
-        'html': markdown.markdown(text),
+        'html': markdown.markdown("\n".join(content[2:])),
+        'title': content[0].replace("\n", ''),
     })
