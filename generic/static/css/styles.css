@@ -249,3 +249,32 @@ nav a {
   margin: 20px 0 0 153px; }
   .link-form + .link-form {
     margin-top: 0px; }
+
+ul.websites {
+  padding: 0;
+  margin: 40px 0px; }
+  ul.websites > li {
+    display: inline-block;
+    width: 255px;
+    height: 250px;
+    margin: 0 40px 25px 0;
+    padding: 10px;
+    -webkit-box-shadow: 0px 0px 5px #333333;
+    -moz-box-shadow: 0px 0px 5px #333333;
+    box-shadow: 0px 0px 5px #333333; }
+    ul.websites > li > h3 {
+      margin: 0; }
+      ul.websites > li > h3 > a {
+        color: #29abe2;
+        font-size: 1.5em;
+        font-weight: 400;
+        text-decoration: none;
+        font-family: "Open Sans", Arial, sans-serif; }
+    ul.websites > li > .info {
+      margin: 0;
+      color: #999;
+      font-style: italic; }
+    ul.websites > li > img {
+      margin: 5px 0; }
+    ul.websites > li > a {
+      text-decoration: none; }

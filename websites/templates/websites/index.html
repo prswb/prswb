@@ -10,21 +10,22 @@
         <p>Proposez un site à la communauté afin de partager votre expérience sur ce site</p>
         <p>Comment? Il suffit de nous indiquer ce que vous en pensez à l'aide d'un commentaire, de signaler les problèmes que vous avez soulevez et/ ou d'émettre des propositions de fonctionnalités ou d'amélioration que vous suggérez pour améliorer l'expérience utilisateur du site.</p>
     {% if websites %}
-        <ul>
+        <ul class="websites">
             {% for website in websites %}
             <li>
-                <a href="{{ website.url }}" taget="_blank">{{ website.title }}</a>
-                {% if website.picture %}
-                    <img src="{{ website.picture.url|resize:"240x160" }}" alt="{{ website.title }} ({{ website.url }})" />
-                {% else %}
-                    <img src="http://api.webthumbnail.org/?width=240&amp;height=160&amp;format=png&amp;screen=1024&amp;url={{ website.url }}" alt="{{ website.title }}">
-                {% endif %}
-                <p>
-                    {% trans "submitted on" %} {{ website.date }}
+                <h3><a href="{{ website.url }}" taget="_blank">{{ website.title }}</a></h3>
+                <p class="info">
+                    {% trans "submitted on" %} {{ website.date|date:"d F Y" }}
                     {% if website.submitter %}
                         {% trans "by" %} <img src="{% gravatar_for_email request.user.email 16 %}" alt=""> {{ website.submitter.username }}
                     {% endif %}
                 </p>
+                {% if website.picture %}
+                    <img src="{{ website.picture.url|resize:"250x160" }}" alt="{{ website.title }} ({{ website.url }})" />
+                {% else %}
+                    <img src="http://api.webthumbnail.org/?width=250&amp;height=160&amp;format=png&amp;screen=1024&amp;url={{ website.url }}" alt="{{ website.title }}">
+                {% endif %}
+
                 <a href="{{ website.url }}" taget="_blank">{{ website.url }}</a>
             </li>
             {% endfor %}
