@@ -36,4 +36,4 @@ def build_admin_email(confirm, data):
     message = get_template('mails/admin_%s.txt' % confirm).render(Context(dict(
         data=data
         )))
-    return subject, text, settings.EMAIL_HOST_USER, [settings.EMAIL_RECIPIENT]
+    return subject, message, settings.EMAIL_HOST_USER, [settings.EMAIL_RECIPIENT]
