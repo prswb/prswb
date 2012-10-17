@@ -1,0 +1,3 @@
+Email : {{ data.sender }}
+Sujet : {{ data.subject }}
+Message : {{ data.message }}
