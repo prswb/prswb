@@ -58,8 +58,7 @@ class SubmitWebsiteTest(TransactionTestCase, WebsiteFixtures):
             website_data.update(picture=fp)
             response = self.client.post(reverse('suggest_website'), website_data, follow=True)
         self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, 'websites/confirm_suggest.html')
-        response = self.client.get(reverse('websites_index'))
+        self.assertTemplateUsed(response, 'websites/index.html')
         self.assertIn("http://prswb.fr", response.content)
 
 
