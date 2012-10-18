@@ -65,7 +65,7 @@
      <li class="fl"><a href="{% url 'websites_index' %}">{% trans "Suggested websites" %}</a></li>
      <li class="fl"><a href="{% url 'suggest_website' %}">{% trans "Suggest a website" %}</a></li>
      <li class="fl"><a href="{% url 'contact' %}">{% trans "Contact" %}</a></li>
-      <li class="fl"><a href="/pages/mentions-legales">{% trans "Legal" %}</a></li>
+      <li class="fl"><a href="{% url 'markdown_page' slug='mentions-legales' %}">{% trans "Legal" %}</a></li>
      </ul>
    </nav>
  </div>
