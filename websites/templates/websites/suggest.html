@@ -1,12 +1,12 @@
 {% extends "layout.html" %}
 {% load i18n %}
-{% block meta_title %}{% trans "Proposer un site" %}{% endblock %}
-{% block meta_description %}{% trans "Proposez un site à la communauté afin de partager votre expérience sur ce site. Comment ? Il vous suffit de nous indiquer ce que vous en pensez à l'aide d'un commentaire, de signaler les problèmes que vous avez soulevés sur le site et/ ou d'émettre des propositions de fonctionnalités ou d'améliorations que vous suggérez pour améliorer l'expérience utilisateur du site." %}{% endblock %}
+{% block meta_title %}{% trans "Suggest a website" %}{% endblock %}
+{% block meta_description %}{% trans "Suggest a site to the community to share your experience on this website." %} {% trans "How? Leave a comment to tell us what you think, point out issues you would met on the website and propose new features or enhancements to improve user experience on it." %}{% endblock %}
 
 {% block content %}
     <h1>{% trans "Suggest a website" %}</h1>
-    <p>{% trans "Proposez un site à la communauté afin de partager votre expérience sur ce site" %}</p>
-    <p>{% trans "Comment? Il suffit de nous indiquer ce que vous en pensez à l'aide d'un commentaire, de signaler les problèmes que vous avez soulevez et/ ou d'émettre des propositions de fonctionnalités ou d'amélioration que vous suggérez pour améliorer l'expérience utilisateur du site." %}</p>
+    <p>{% trans "Suggest a site to the community to share your experience on this website." %}</p>
+    <p>{% trans "How? Leave a comment to tell us what you think, point out issues you would met on the website and propose new features or enhancements to improve user experience on it." %}</p>
     {% if errors %}
         <p class="error">{% trans "Please correct the errors highlighted below." %}</p>
     {% endif %}

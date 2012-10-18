@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-10-18 10:33+0200\n"
+"POT-Creation-Date: 2012-10-18 11:36+0200\n"
 "PO-Revision-Date: 2012-10-15 11:13+0100\n"
 "Last-Translator: Nicolas Perriault <nicolas@perriault.net>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -50,63 +50,46 @@ msgstr "Merci pour cette proposition."
 msgid "Invalid request"
 msgstr "Requête invalide"
 
-#: templates/websites/index.html:4
-msgid "Sites proposés"
-msgstr ""
-
-#: templates/websites/index.html:5
-msgid ""
-"Découvrez tous les sites déjà proposés et contribuez aux tests collaboratifs "
-"sur ces sites en partageant votre expérience."
-msgstr ""
-
-#: templates/websites/index.html:8
+#: templates/websites/index.html:4 templates/websites/index.html.py:9
 msgid "Suggested websites"
 msgstr "Sites proposés"
 
-#: templates/websites/index.html:9 templates/websites/suggest.html:8
+#: templates/websites/index.html:10 templates/websites/suggest.html:4
+#: templates/websites/suggest.html.py:8
 msgid ""
+"Suggest a site to the community to share your experience on this website."
+msgstr ""
 "Proposez un site à la communauté afin de partager votre expérience sur ce "
-"site"
-msgstr ""
+"site."
 
-#: templates/websites/index.html:10 templates/websites/suggest.html:9
+#: templates/websites/index.html:11 templates/websites/suggest.html:4
+#: templates/websites/suggest.html.py:9
 msgid ""
-"Comment? Il suffit de nous indiquer ce que vous en pensez à l'aide d'un "
-"commentaire, de signaler les problèmes que vous avez soulevez et/ ou "
-"d'émettre des propositions de fonctionnalités ou d'amélioration que vous "
-"suggérez pour améliorer l'expérience utilisateur du site."
+"How? Leave a comment to tell us what you think, point out issues you would "
+"met on the website and propose new features or enhancements to improve user "
+"experience on it."
 msgstr ""
+"Comment ? Il vous suffit de nous indiquer ce que vous en pensez à l'aide "
+"d'un commentaire, de signaler les problèmes que vous avez soulevés sur le "
+"site et/ ou d'émettre des propositions de fonctionnalités ou d'améliorations "
+"que vous suggérez pour améliorer l'expérience utilisateur du site."
 
-#: templates/websites/index.html:17
+#: templates/websites/index.html:18
 msgid "submitted on"
 msgstr "proposé le"
 
-#: templates/websites/index.html:19
+#: templates/websites/index.html:20
 msgid "by"
 msgstr "par"
 
-#: templates/websites/index.html:30
+#: templates/websites/index.html:31
 msgid "No suggested website yet."
 msgstr "Aucun site proposé actuellement."
 
-#: templates/websites/index.html:31 templates/websites/suggest.html:7
+#: templates/websites/index.html:32 templates/websites/suggest.html:3
+#: templates/websites/suggest.html.py:7
 msgid "Suggest a website"
 msgstr "Proposer un site"
-
-#: templates/websites/suggest.html:3
-msgid "Proposer un site"
-msgstr ""
-
-#: templates/websites/suggest.html:4
-msgid ""
-"Proposez un site à la communauté afin de partager votre expérience sur ce "
-"site. Comment ? Il vous suffit de nous indiquer ce que vous en pensez à "
-"l'aide d'un commentaire, de signaler les problèmes que vous avez soulevés "
-"sur le site et/ ou d'émettre des propositions de fonctionnalités ou "
-"d'améliorations que vous suggérez pour améliorer l'expérience utilisateur du "
-"site."
-msgstr ""
 
 #: templates/websites/suggest.html:11
 msgid "Please correct the errors highlighted below."
