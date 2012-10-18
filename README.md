@@ -51,6 +51,23 @@ $ python manage.py migrate
 $ python manage.py collectstatic
 ```
 
+Working with Sass & Compass
+---------------------------
+
+Stylesheets are handled through [Compass](http://compass-style.org/).
+
+To get started:
+
+```
+$ sudo gem install compass
+$ cd generic/static
+$ compass watch
+>>> Compass is polling for changes. Press Ctrl-C to Stop.
+```
+
+Now you can edit the stylesheets in the `sass/` directory, related css files will
+be compiled in the background.
+
 Settings management
 -------------------
 
