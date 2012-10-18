@@ -1,23 +1,22 @@
 {% extends "layout.html" %}
 {% load i18n %}
 {% load url from future %}
-{% block meta_title %}Contact{% endblock %}
-{% block meta_description %}UXperiment est un site qui se veut collaboratif. Nous sommes à l'écoute de toutes remarques qui puissent nous faire avancer. N'hésitez pas à nous contacter, même pour nous dire 3 mots ;){% endblock %}
+{% block meta_title %}{% trans "Contact" %}{% endblock %}
+{% block meta_description %}
+{% trans "UXperiment is a collaborative platform. We're listening your remerks to make to service better. Don't hesitate to contact us, event you just want to say hello ;)" %}
+{% endblock %}
 
 {% block content %}
     <h1>{% trans "Contact" %}</h1>
     <p>
-        {% trans "UXperiment, c’est le mariage de l’experience utilisateur ET de l’utilisateur." %}
-        {% trans "Et ici, l'utilisateur, c’est vous." %}
+        {% trans "UXperiment is a mariage between websites & their user experience. Here, you are the user." %}
     </p>
     <p>
-        {% trans "Nous sommes ouvert à toute remarque, prise de contact, collaboration, invitation
-        à des banquets et divers apéro." %}
-        {% trans "S'il s’agit de ces 2 derniers, sachez que nous
-        sommes toujours prêts à nous sacrifier pour le bien commun, donc n’ayez aucune hésitations." %}
+        {% trans "We're open to any remark, suggestion, contact enquiry, collaboration & beer offering." %}
+        {% trans "For the last kind of request, note we're always ready to sacrifice for the common good." %}
     </p>
     <p>
-        {% trans "Dans les autres cas, nous serons aussi très heureux de vous répondre." %}
+        {% trans "For other cases, we'll be happy to provide you with an appropriate answer anyway." %}
     </p>
     <form method="post" action="{% url "contact" %}" >
         {% csrf_token %}

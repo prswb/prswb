@@ -7,98 +7,101 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-10-18 10:33+0200\n"
-"PO-Revision-Date: 2012-10-14 23:17+0100\n"
+"POT-Creation-Date: 2012-10-18 13:49+0200\n"
+"PO-Revision-Date: 2012-10-18 13:50+0100\n"
 "Last-Translator: Nicolas Perriault <nicolas@perriault.net>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Poedit 1.5.4\n"
 
-#: forms.py:9
 msgid "3 characters minimum required."
 msgstr "3 caractères minimum sont requis."
 
-#: forms.py:10
 msgid "A subject is required."
 msgstr "Un sujet doit être renseigné."
 
-#: forms.py:11 templates/pages/contact.html:25
 msgid "Subject"
 msgstr "Sujet"
 
-#: forms.py:13
 msgid "A valid email address is required"
 msgstr "Une adresse email valide doit être renseignée."
 
-#: forms.py:14
 msgid "An email is required."
 msgstr "Une adresse email est demandée."
 
-#: forms.py:15
 msgid "Email address"
 msgstr "Adresse email"
 
-#: forms.py:17
 msgid "8 characters minimum required."
 msgstr "8 caractères minimum sont requis."
 
-#: forms.py:18
 msgid "A message is required."
 msgstr "Un message est demandé."
 
-#: forms.py:19 templates/pages/contact.html:33
 msgid "Message"
 msgstr "Message"
 
-#: views.py:53
 msgid "Unable to render page, sorry."
 msgstr "Impossible d'afficher la page, désolé."
 
-#: templates/pages/confirm_contact.html:6
 msgid "Thank you!"
 msgstr "Merci !"
 
-#: templates/pages/confirm_contact.html:7
 msgid "Your comment on UXperiment has been received."
 msgstr "Votre commentaire sur UXperiment a bien été reçu."
 
-#: templates/pages/confirm_contact.html:9
 msgid "Thanks for your participation."
 msgstr "Merci de votre participation."
 
-#: templates/pages/confirm_contact.html:11
 msgid "Cheers,"
 msgstr "À bientôt,"
 
-#: templates/pages/confirm_contact.html:13
 msgid "The UXperiment team"
 msgstr "L'équipe UXperiment"
 
-#: templates/pages/contact.html:8
 msgid "Contact"
 msgstr "Contact"
 
-#: templates/pages/contact.html:10
 msgid ""
-"UXperiment, c’est le mariage de l’experience utilisateur ET de l’utilisateur."
+"UXperiment is a collaborative platform. We're listening your remerks to make "
+"to service better. Don't hesitate to contact us, event you just want to say "
+"hello ;)"
 msgstr ""
+"UXperiment est un site qui se veut collaboratif. Nous sommes à l'écoute de "
+"toutes remarques qui puissent nous faire avancer. N'hésitez pas à nous "
+"contacter, même pour nous dire 3 mots ;)"
 
-#: templates/pages/contact.html:11
-msgid "Et ici, l'utilisateur, c’est vous."
+msgid ""
+"UXperiment is a mariage between websites & their user experience. Here, you "
+"are the user."
 msgstr ""
+"UXperiment, c’est le mariage de l’experience utilisateur ET de "
+"l’utilisateur. Et ici, l'utilisateur, c’est vous."
 
-#: templates/pages/contact.html:20
-msgid "Dans les autres cas, nous serons aussi très heureux de vous répondre."
+msgid ""
+"We're open to any remark, suggestion, contact enquiry, collaboration & beer "
+"offering."
 msgstr ""
+"Nous sommes ouvert à toute remarque, prise de contact, collaboration, "
+"invitation à des banquets et divers apéro."
 
-#: templates/pages/contact.html:29
+msgid ""
+"For the last kind of request, note we're always ready to sacrifice for the "
+"common good."
+msgstr ""
+"S'il s’agit de ces 2 derniers, sachez que nous sommes toujours prêts à nous "
+"sacrifier pour le bien commun, donc n’ayez aucune hésitations."
+
+msgid ""
+"For other cases, we'll be happy to provide you with an appropriate answer "
+"anyway."
+msgstr "Dans les autres cas, nous serons aussi très heureux de vous répondre."
+
 msgid "Email"
 msgstr "Email"
 
-#: templates/pages/contact.html:35
 msgid "Send"
 msgstr "Envoyer"
