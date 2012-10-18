@@ -1,6 +1,10 @@
 {% extends "layout.html" %}
 {% load i18n %}
 
+{% block body_class %}error error404{% endblock %}
+
 {% block content %}
-Bim 404!
+    <h1>{% trans "Error 404" %}</h1>
+    <h2>{% trans "Prophet lost." %}</h2>
+    <a href="{% url homepage %}">Back home</a>
 {% endblock %}

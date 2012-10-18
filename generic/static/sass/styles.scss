@@ -150,3 +150,38 @@ ul.messages {
 		color: #F93;
 	}
 }
+
+body.error {
+	> #content {
+		background: none no-repeat center 100px;
+		min-height: 400px;
+		padding-bottom: 100px;
+		margin-bottom: 30px;
+
+		h1 {
+			font-size: 3em;
+			text-transform: uppercase;
+			margin: 0;
+		}
+		h2 {
+			font-size: 3em;
+			text-transform: uppercase;
+		}
+		a {
+			background: $secondary-color;
+			color: $color-for-bg;
+			text-decoration: none;
+			padding: 10px 20px;
+			font-size: 1.3em;
+		}
+		a:before {
+			content: "> ";
+		}
+	}
+}
+body.error404 > #content {
+	background-image: url('../img/error404.png');
+}
+body.error500 > #content {
+	background-image: url('../img/error500.png');
+}

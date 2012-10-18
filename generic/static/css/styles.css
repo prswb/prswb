@@ -298,3 +298,30 @@ ul.messages {
   ul.messages .warning {
     background: #FFF0D2;
     color: #F93; }
+
+body.error > #content {
+  background: none no-repeat center 100px;
+  min-height: 400px;
+  padding-bottom: 100px;
+  margin-bottom: 30px; }
+  body.error > #content h1 {
+    font-size: 3em;
+    text-transform: uppercase;
+    margin: 0; }
+  body.error > #content h2 {
+    font-size: 3em;
+    text-transform: uppercase; }
+  body.error > #content a {
+    background: #29abe2;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 1.3em; }
+  body.error > #content a:before {
+    content: "> "; }
+
+body.error404 > #content {
+  background-image: url("../img/error404.png"); }
+
+body.error500 > #content {
+  background-image: url("../img/error500.png"); }

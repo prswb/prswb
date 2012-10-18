@@ -4,12 +4,12 @@ from django.conf.urls import patterns, include, url
 from django.conf import settings
 from django.conf.urls.i18n import i18n_patterns
 from django.contrib import admin
+from django import views as django_views
 
 from generic import views as generic_views
 from pages import views as pages_views
 from websites import views as websites_views
 from registration.backends.default import urls as registration_urls
-from django import views as django_views
 from imagefit import urls as imagefit_urls
 
 admin.autodiscover()
@@ -44,6 +44,9 @@ urlpatterns = i18n_patterns('',
 
 # non i18 urls
 urlpatterns += patterns('',
+    # errors
+    url(r'^404/', django_views.generic.simple.direct_to_template, {'template': '404.html'}),
+    url(r'^500/', django_views.generic.simple.direct_to_template, {'template': '500.html'}),
     # imagefit
     url(r'^imagefit/', include(imagefit_urls)),
     # admin
