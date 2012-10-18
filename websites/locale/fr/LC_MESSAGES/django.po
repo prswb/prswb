@@ -7,63 +7,49 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-10-18 11:36+0200\n"
-"PO-Revision-Date: 2012-10-15 11:13+0100\n"
+"POT-Creation-Date: 2012-10-18 13:56+0200\n"
+"PO-Revision-Date: 2012-10-18 13:57+0100\n"
 "Last-Translator: Nicolas Perriault <nicolas@perriault.net>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Poedit 1.5.4\n"
 
-#: models.py:21
 msgid "Comment"
 msgstr "Commentaire"
 
-#: models.py:22
 msgid "Enhancement suggestion"
 msgstr "Suggestion d'amélioration"
 
-#: models.py:23
 msgid "Problem or bug"
 msgstr "Problème/bug"
 
-#: utils.py:17
 msgid "Invalid URL"
 msgstr "Adresse invalide"
 
-#: utils.py:18
 msgid "This URL has already been submitted"
 msgstr "Cette URL a déjà été suggérée"
 
-#: utils.py:19
 msgid "Failed at opening the URL"
 msgstr "Échec d'ouverture de l'URL"
 
-#: views.py:45
 msgid "Thanks for your proposition."
 msgstr "Merci pour cette proposition."
 
-#: views.py:58
 msgid "Invalid request"
 msgstr "Requête invalide"
 
-#: templates/websites/index.html:4 templates/websites/index.html.py:9
 msgid "Suggested websites"
 msgstr "Sites proposés"
 
-#: templates/websites/index.html:10 templates/websites/suggest.html:4
-#: templates/websites/suggest.html.py:8
 msgid ""
 "Suggest a site to the community to share your experience on this website."
 msgstr ""
 "Proposez un site à la communauté afin de partager votre expérience sur ce "
 "site."
 
-#: templates/websites/index.html:11 templates/websites/suggest.html:4
-#: templates/websites/suggest.html.py:9
 msgid ""
 "How? Leave a comment to tell us what you think, point out issues you would "
 "met on the website and propose new features or enhancements to improve user "
@@ -74,28 +60,33 @@ msgstr ""
 "site et/ ou d'émettre des propositions de fonctionnalités ou d'améliorations "
 "que vous suggérez pour améliorer l'expérience utilisateur du site."
 
-#: templates/websites/index.html:18
 msgid "submitted on"
 msgstr "proposé le"
 
-#: templates/websites/index.html:20
 msgid "by"
 msgstr "par"
 
-#: templates/websites/index.html:31
 msgid "No suggested website yet."
 msgstr "Aucun site proposé actuellement."
 
-#: templates/websites/index.html:32 templates/websites/suggest.html:3
-#: templates/websites/suggest.html.py:7
 msgid "Suggest a website"
 msgstr "Proposer un site"
 
-#: templates/websites/suggest.html:11
 msgid "Please correct the errors highlighted below."
 msgstr "Veuillez corriger les erreurs pointées ci-dessous."
 
-#: templates/websites/suggest.html:16
+msgid "Website address (URL)"
+msgstr "Adresse du site (URL)"
+
+msgid "Site name"
+msgstr "Nom du site"
+
+msgid "Site description"
+msgstr "Description du site"
+
+msgid "Request type"
+msgstr "Type de demande"
+
 msgid "Suggest this website"
 msgstr "Proposer ce site"
 

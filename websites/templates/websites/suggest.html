@@ -12,7 +12,22 @@
     {% endif %}
     <form method="post" action="." enctype="multipart/form-data">
         {% csrf_token %}
-        {{ form.as_p }}
+        {{ form.url.errors }}
+        <p> <label for="id_url">{% trans "Website address (URL)" %} *</label>
+        {{ form.url }}</p>
+
+        {{ form.title.errors }}
+        <p> <label for="id_title">{% trans "Site name" %} *</label>
+        {{ form.title }}</p>
+
+        {{ form.description.errors }}
+        <p> <label for="id_description">{% trans "Site description" %} *</label>
+        {{ form.description }}</p>
+
+        {{ form.request_type.errors }}
+        <p> <label for="id_request_type">{% trans "Request type" %} *</label>
+        {{ form.request_type }}</p>
+
         <input type="submit" value="{% trans "Suggest this website" %}" />
     </form>
 {% endblock %}
