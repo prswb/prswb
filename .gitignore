@@ -1,11 +1,8 @@
 *.pyc
 *.sass-cache
 /test.db
+/dummy.db
 /uxperiment/media/*
-###
 /uxperiment/settings/local.py
-*.db
-/_SOURCES
 .env
-/base
 
