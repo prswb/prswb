@@ -20,9 +20,6 @@ urlpatterns = i18n_patterns('',
     url(r'^i18n/(?P<lang>[a-z]{2,})/$', generic_views.change_language,
         name='change_language'),
 
-    # admin
-    url(r'^admin/', include(admin.site.urls)),
-
     # contact
     url(r'^contact/$', pages_views.contact,
         name='contact'),
@@ -49,12 +46,12 @@ urlpatterns = i18n_patterns('',
 urlpatterns += patterns('',
     # imagefit
     url(r'^imagefit/', include(imagefit_urls)),
-
+    # admin
+    url(r'^admin/', include(admin.site.urls)),
     # static files
     url(r'^static/(?P<path>.*)$', django_views.static.serve, {
            'document_root': settings.STATIC_ROOT,
        }),
-
     # media files
     url(r'^media/(?P<path>.*)$', django_views.static.serve, {
            'document_root': settings.MEDIA_ROOT,
