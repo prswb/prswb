@@ -1,4 +1,4 @@
-Django==1.4.2
+Django==1.11.29
 South==0.7.6
 Markdown==2.2.0
 -e git+git://github.com/vinyll/django-imagefit.git#egg=django-imagefit
