@@ -8,6 +8,6 @@ django-gravatar==0.1.0
 django-registration==0.8
 gunicorn==0.14.6
 psycopg2==2.4.5
-requests==0.14.0
+requests==2.20.0
 PIL==1.1.7
 wsgiref==0.1.2
