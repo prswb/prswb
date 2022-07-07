@@ -8,7 +8,7 @@ django-registration==0.8
 django-debug-toolbar==0.9.4
 wsgiref==0.1.2
 PIL==1.1.7
-requests==0.14.0
+requests==2.20.0
 #heroku requirements to not add
 #dj-database-url==0.2.1
 #gunicorn==0.14.6
